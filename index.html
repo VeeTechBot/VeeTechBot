@@ -548,6 +548,9 @@
         <span class="skill-tag">Video Transmission</span>
         <span class="skill-tag">Embedded C/C++</span>
         <span class="skill-tag">System Integration</span>
+        <span class="skill-tag">FPGA / Verilog</span>
+        <span class="skill-tag">CPU Architecture</span>
+        <span class="skill-tag">Parallel Processing</span>
       </div>
     </div>
   </div>
@@ -759,8 +762,223 @@
         </div>
 
       </div><!-- end project-body -->
+    </div><!-- end project-card ugv -->
+
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!-- PROJECT 02 — eYRC MazeSolver Bot                           -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <div class="project-card">
+      <div class="project-header">
+        <div class="project-header-img">
+          <img src="media/eyrc/bot-eyrc.jpeg" alt="eYRC MazeSolver Bot in Arena">
+        </div>
+        <div class="project-header-info">
+          <div class="project-number">02</div>
+          <div class="project-category">// FPGA Robotics · Autonomous Navigation · IIT Bombay</div>
+          <div class="project-title">MazeSolver Bot</div>
+          <div class="project-subtitle">e-Yantra Robotics Competition 2025–26</div>
+          <p class="project-desc">
+            An FPGA-powered autonomous robot built from scratch for the e-Yantra Robotics Competition
+            (eYRC 2025–26), hosted by IIT Bombay under the Ministry of Education. Running on a De0-Nano
+            board with Altera Cyclone IV, the robot navigates dynamic warehouse-like mazes in real time
+            while measuring environmental parameters — temperature, humidity, and soil moisture — at
+            designated arena zones.
+          </p>
+          <div class="project-tags">
+            <span class="ptag">FPGA / Verilog HDL</span>
+            <span class="ptag">De0-Nano Board</span>
+            <span class="ptag">Altera Cyclone IV</span>
+            <span class="ptag">DHT11 Sensor</span>
+            <span class="ptag">Soil Moisture v1.2</span>
+            <span class="ptag">Parallel Processing</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-body">
+
+        <!-- ── MEDIA GRID ── -->
+        <div class="section-sub-title" style="margin-bottom:18px;">// Build Documentation &amp; Arena Media</div>
+        <div class="media-grid">
+
+          <!-- Col 1 tall: bot in eYRC arena -->
+          <div class="media-cell tall">
+            <img src="media/eyrc/bot-eyrc.jpeg" alt="MazeSolver Bot navigating eYRC 25-26 arena"
+                 onclick="openLightbox(this.src)">
+            <div class="media-label">MazeSolver Bot · eYRC 25–26 Arena</div>
+          </div>
+
+          <!-- Col 2 row 1: robot close-up with sensors -->
+          <div class="media-cell">
+            <img src="media/eyrc/robotickit-eyrc.jpeg" alt="MazeSolver Bot sensor assembly close-up"
+                 onclick="openLightbox(this.src)">
+            <div class="media-label">Robot — Sensor &amp; Electronics Assembly</div>
+          </div>
+
+          <!-- Col 3 row 1: ModelSim simulation screenshot -->
+          <div class="media-cell">
+            <img src="media/eyrc/simulation.jpeg" alt="ModelSim Intel FPGA Simulation — DHT11 Verilog"
+                 onclick="openLightbox(this.src)">
+            <div class="media-label">ModelSim · DHT11 Verilog Simulation</div>
+          </div>
+
+          <!-- Col 2 row 2: e-Yantra kit unboxing -->
+          <div class="media-cell">
+            <img src="media/eyrc/eyantra_frontv.jpeg" alt="e-Yantra hardware kit from IIT Bombay"
+                 onclick="openLightbox(this.src)">
+            <div class="media-label">e-Yantra Kit · De0-Nano + Components · IIT Bombay</div>
+          </div>
+
+          <!-- Col 3 row 2: team photo -->
+          <div class="media-cell">
+            <img src="media/eyrc/team-eyrc.jpeg" alt="MazeSolver Bot team — eYRC 2025-26"
+                 onclick="openLightbox(this.src)">
+            <div class="media-label">Team — MazeSolver Bot · eYRC 25–26</div>
+          </div>
+
+        </div><!-- end media-grid -->
+
+        <!-- ── My Role + Tech Stack ── -->
+        <div class="project-body-grid">
+          <div>
+            <div class="section-sub-title">// My Role — FPGA Systems &amp; Firmware</div>
+            <ul class="role-list">
+              <li>Designed and implemented a <strong>custom CPU architecture on FPGA fabric</strong> using Verilog HDL on the De0-Nano board (Altera Cyclone IV EP4CE22F17C6)</li>
+              <li>Wrote a <strong>DHT11 sensor driver in Verilog</strong> — 1-wire protocol implementation with full ModelSim simulation verification for temperature and humidity acquisition</li>
+              <li>Integrated <strong>Capacitive Soil Moisture Sensor v1.2</strong> for analog zone readings, enabling environmental data logging at warehouse waypoints</li>
+              <li>Implemented a <strong>parallel processing architecture</strong> on FPGA to simultaneously manage sensor acquisition, motor FSM, maze decision logic, and UART comms</li>
+              <li>Developed a <strong>real-time maze-solving algorithm</strong> on FPGA fabric, enabling dynamic navigation of reconfigurable warehouse-like arena layouts</li>
+              <li>Designed <strong>HC-SR04 ultrasonic sensor drivers</strong> in Verilog for multi-directional obstacle detection and wall-following behavior</li>
+              <li>Implemented <strong>UART serial communication module</strong> in Verilog for wireless transmission of environmental readings to the Central Control Unit</li>
+              <li>Assembled the <strong>complete robot hardware</strong> from e-Yantra kit components — chassis, motor mounts, sensor brackets, and wiring harness</li>
+              <li>Ranked among <strong>Top 50 teams nationally</strong>, qualifying for the hardware kit distribution phase with a De0-Nano FPGA board</li>
+              <li>Competed through <strong>all phases of the competition</strong> — simulation, hardware build, and arena — earning a Level 3 Certificate of Participation from IIT Bombay</li>
+            </ul>
+          </div>
+          <div>
+            <div class="section-sub-title">// Technology Stack</div>
+            <div class="tech-grid">
+              <div class="tech-item"><div class="tech-name">De0-Nano FPGA</div><div class="tech-desc">Altera Cyclone IV EP4CE22F17C6 · 22K LEs · Core processing unit</div></div>
+              <div class="tech-item"><div class="tech-name">Verilog HDL</div><div class="tech-desc">Custom CPU · Sensor drivers · Motor FSM · UART TX/RX modules</div></div>
+              <div class="tech-item"><div class="tech-name">DHT11 Sensor</div><div class="tech-desc">1-wire protocol · Temperature + RH acquisition · Verilog peripheral</div></div>
+              <div class="tech-item"><div class="tech-name">Soil Moisture v1.2</div><div class="tech-desc">Capacitive sensing · Zone-level moisture data · ADC interface</div></div>
+              <div class="tech-item"><div class="tech-name">HC-SR04 Ultrasonic</div><div class="tech-desc">Front + side wall detection · Verilog trigger/echo driver</div></div>
+              <div class="tech-item"><div class="tech-name">ModelSim 2020.1</div><div class="tech-desc">Intel FPGA Starter Edition · HDL simulation &amp; waveform analysis</div></div>
+              <div class="tech-item"><div class="tech-name">Parallel Processing</div><div class="tech-desc">Concurrent sensor, motor &amp; comms modules on FPGA fabric — no CPU bottleneck</div></div>
+              <div class="tech-item"><div class="tech-name">UART / Serial Comms</div><div class="tech-desc">Custom Verilog module · Environmental data → Central Control Unit</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Subsystems ── -->
+        <div class="section-sub-title">// FPGA Subsystems</div>
+        <div class="subsystems">
+          <div class="sub-card">
+            <div class="sub-icon">🧠</div>
+            <div class="sub-title">Custom CPU Core</div>
+            <div class="sub-detail">Purpose-built processor architecture in Verilog on Cyclone IV FPGA. Handles instruction decode, data flow, and concurrent sensor + motor control — all running as hardware logic.</div>
+          </div>
+          <div class="sub-card">
+            <div class="sub-icon">🌡️</div>
+            <div class="sub-title">Environmental Sensing</div>
+            <div class="sub-detail">DHT11 1-wire driver reads temperature and relative humidity. Capacitive soil moisture sensor v1.2 logs zone moisture levels. Data packetized and transmitted at designated arena waypoints.</div>
+          </div>
+          <div class="sub-card">
+            <div class="sub-icon">🗺️</div>
+            <div class="sub-title">Maze Navigation</div>
+            <div class="sub-detail">HC-SR04 ultrasonic sensors on front and sides. Verilog FSM maze-solving algorithm processes sensor inputs in real time, adapting to dynamically reconfigured warehouse wall layouts.</div>
+          </div>
+          <div class="sub-card">
+            <div class="sub-icon">⚙️</div>
+            <div class="sub-title">Motor Control</div>
+            <div class="sub-detail">Dual DC motor drive with PWM signals generated directly from FPGA GPIO pins. Differential drive enables precise turning and wall-following within narrow maze corridors.</div>
+          </div>
+          <div class="sub-card">
+            <div class="sub-icon">🔄</div>
+            <div class="sub-title">Parallel Processing</div>
+            <div class="sub-detail">FPGA fabric runs sensor acquisition, navigation FSM, motor control, and UART communication fully in parallel — a true hardware concurrency advantage over microcontroller architectures.</div>
+          </div>
+          <div class="sub-card">
+            <div class="sub-icon">📶</div>
+            <div class="sub-title">Serial Communication</div>
+            <div class="sub-detail">Custom UART TX/RX module in Verilog. Environmental sensor data packetized and sent wirelessly to the Central Control Unit. Verified in ModelSim before hardware deployment.</div>
+          </div>
+        </div>
+
+        <!-- ── Competition Phases ── -->
+        <div class="section-sub-title">// Competition Phases</div>
+        <div class="phases">
+          <div class="phase">
+            <div class="phase-num">01</div>
+            <div class="phase-title">Qualification Round</div>
+            <ul class="phase-items">
+              <li>Problem statement analysis</li>
+              <li>FPGA architecture planning</li>
+              <li>Verilog module design</li>
+              <li>DHT11 driver — ModelSim verified</li>
+              <li>UART module simulation</li>
+              <li>Top 50 nationally · Kit awarded</li>
+            </ul>
+          </div>
+          <div class="phase">
+            <div class="phase-num">02</div>
+            <div class="phase-title">Hardware Build</div>
+            <ul class="phase-items">
+              <li>De0-Nano FPGA board setup</li>
+              <li>Full robot chassis assembly</li>
+              <li>Sensor integration and wiring</li>
+              <li>Motor driver FPGA interfacing</li>
+              <li>Real-time sensor data acquisition</li>
+              <li>Parallel subsystem integration</li>
+            </ul>
+          </div>
+          <div class="phase">
+            <div class="phase-num">03</div>
+            <div class="phase-title">Arena Competition</div>
+            <ul class="phase-items">
+              <li>eYRC 25–26 arena field runs</li>
+              <li>Live maze navigation tested</li>
+              <li>Environmental data at zone points</li>
+              <li>Dynamic wall reconfiguration handled</li>
+              <li>Competed through all rounds</li>
+              <li>Level 3 Certificate · IIT Bombay</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ── eYRC Certificate PDF ── -->
+        <div class="section-sub-title">// e-Yantra Certificate — IIT Bombay</div>
+        <div class="loa-pdf-section">
+          <div class="loa-pdf-header">
+            <div class="loa-pdf-title-row">
+              <div class="loa-seal-mini">
+                <div class="loa-seal-mini-text" style="font-size:9px;letter-spacing:.05em;">eYRC</div>
+                <div class="loa-seal-mini-sub">IIT-B</div>
+              </div>
+              <div>
+                <div class="loa-pdf-title">Certificate of Participation</div>
+                <div class="loa-pdf-from">Prof. Shivaram Kalyanakrishnan · Principal Investigator, e-Yantra · IIT Bombay · ERTS Lab, CSE Dept</div>
+              </div>
+            </div>
+            <div class="loa-pdf-meta">
+              <span>EYRC2025-261775731095</span>
+              <span>eYRC 2025–26</span>
+              <span>MazeSolver Bot Theme</span>
+            </div>
+          </div>
+          <div class="loa-award-banner">
+            ★ &nbsp; Team MB-1737–2416 · <strong>Top 50 nationally</strong> — e-Yantra Robotics Competition 2025–26 · IIT Bombay · Sponsored by MoE, Govt. of India &nbsp; ★
+          </div>
+          <iframe
+            class="loa-pdf-viewer"
+            src="media/eyrc/eyrc_2026-MB_1737-2416-vineet-sharma.pdf"
+            title="e-Yantra Certificate of Participation — Vineet Sharma · eYRC 2025-26">
+          </iframe>
+        </div>
+
+      </div><!-- end project-body -->
       <div class="project-more">// More projects coming soon — check back for updates</div>
-    </div><!-- end project-card -->
+    </div><!-- end project-card eyrc -->
 
   </div>
 </section>
@@ -835,7 +1053,7 @@
 <!-- ═══════════════════════ FOOTER ═══════════════════════ -->
 <footer>
   <div class="footer-name">Vineet Sharma</div>
-  <div class="footer-sub">Electronics Engineer · Embedded Systems · Defence Robotics</div>
+  <div class="footer-sub">Electronics Engineer · Embedded Systems · Defence Robotics · FPGA Systems</div>
 </footer>
 
 <script>
