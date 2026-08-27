@@ -488,6 +488,7 @@
   <ul class="nav-links">
     <li><a href="#home">Home</a></li>
     <li><a href="#projects">Projects</a></li>
+    <li><a href="#pcbs">PCBs</a></li>
     <li><a href="#achievements">Achievements</a></li>
     <li><a href="#certifications">Certifications</a></li>
   </ul>
@@ -983,6 +984,127 @@
   </div>
 </section>
 
+<!-- ═══════════════════════ MY PCBs ═══════════════════════ -->
+<section id="pcbs">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">Hardware Design</div>
+      <h2 class="section-title">My <span class="hl">PCBs</span></h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <!-- PCB 01 — DD Robocon Actuator + Interface Board -->
+    <div class="project-card">
+      <div class="project-header">
+        <div class="project-header-img">
+          <img src="media/PCB3.jpeg" alt="Vineet Sharma holding the assembled Actuator PCB">
+        </div>
+        <div class="project-header-info">
+          <div class="project-number">01</div>
+          <div class="project-category">// 4-Layer PCB · DD Robocon 2026 · IIT Delhi</div>
+          <div class="project-title">Actuator + Interface Board</div>
+          <div class="project-subtitle">Modular Robot Electronics — First-Try Bring-Up</div>
+          <p class="project-desc">
+            My first 4-layer PCB — and it worked perfectly on its very first bring-up. Every year at
+            DD Robocon the robot changes — new sensors, new microcontrollers, new control strategies —
+            but the core electronics stay the same. So instead of redesigning from scratch each season,
+            we built a modular two-board system: a fixed Actuator Board and a detachable Interface
+            Board that plugs in like an Arduino shield. Every SMD component on the board, down to the
+            fine-pitch ICs, was hand-soldered in-house by the team.
+          </p>
+          <div class="project-tags">
+            <span class="ptag">4-Layer PCB</span>
+            <span class="ptag">Modular Design</span>
+            <span class="ptag">Hand-Soldered SMD</span>
+            <span class="ptag">Motor / Servo / Pneumatic Control</span>
+            <span class="ptag">Detachable Interface Board</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-body">
+
+        <!-- ── MEDIA GRID ── -->
+        <div class="section-sub-title" style="margin-bottom:18px;">// Build &amp; Bring-Up Documentation</div>
+        <div class="media-grid">
+
+          <!-- Col 1 tall -->
+          <div class="media-cell tall">
+            <img src="media/PCB4.jpeg" alt="Actuator Board — bare PCB, front"
+                 onclick="openLightbox(this.src)">
+            <div class="media-label">Actuator Board — Bare PCB</div>
+          </div>
+
+          <!-- Col 2 row 1 -->
+          <div class="media-cell">
+            <img src="media/PCB2.jpeg" alt="Interface Board stacked on Actuator Board"
+                 onclick="openLightbox(this.src)">
+            <div class="media-label">Interface Board Stacked On Top</div>
+          </div>
+
+          <!-- Col 3 row 1 -->
+          <div class="media-cell">
+            <img src="media/PCB6.jpeg" alt="First power-on with all channel LEDs live"
+                 onclick="openLightbox(this.src)">
+            <div class="media-label">First Power-On — All Channels Live</div>
+          </div>
+
+          <!-- Col 2 row 2 -->
+          <div class="media-cell">
+            <img src="media/PCB1.jpeg" alt="Assembled board close-up under UV light"
+                 onclick="openLightbox(this.src)">
+            <div class="media-label">Fully Assembled — Close-Up</div>
+          </div>
+
+          <!-- Col 3 row 2 -->
+          <div class="media-cell">
+            <img src="media/PCB5.jpeg" alt="Back of the board with team and mentor names"
+                 onclick="openLightbox(this.src)">
+            <div class="media-label">Back Side — Team &amp; Mentors</div>
+          </div>
+
+        </div><!-- end media-grid -->
+
+        <!-- ── Highlights + Specs ── -->
+        <div class="project-body-grid">
+          <div>
+            <div class="section-sub-title">// Design &amp; Assembly Highlights</div>
+            <ul class="role-list">
+              <li>Designed a <strong>4-layer PCB</strong> end-to-end in Altium — schematic capture, layout, and manufacturing files</li>
+              <li>Architected a <strong>modular two-board system</strong>: a fixed Actuator Board plus a detachable, shield-style Interface Board — so the controller can be swapped season to season without touching the power/actuation layer</li>
+              <li>Routed dedicated channels for <strong>10 DC motor drivers, servo interfaces, and pneumatic relay control</strong>, alongside on-board power regulation and distribution</li>
+              <li>Hand-soldered <strong>every SMD component</strong> in-house with the team — fine-pitch ICs down to passives</li>
+              <li>Board came up clean on the <strong>very first bring-up</strong> — first 4-layer design to do so first try</li>
+              <li>Contributed to the team's <strong>AIR 5 finish</strong> at DD Robocon 2026, IIT Delhi</li>
+            </ul>
+          </div>
+          <div>
+            <div class="section-sub-title">// Board Specs</div>
+            <div class="tech-grid">
+              <div class="tech-item"><div class="tech-name">4-Layer Stack-Up</div><div class="tech-desc">Designed in Altium · manufactured by PCB Power</div></div>
+              <div class="tech-item"><div class="tech-name">Actuator Board</div><div class="tech-desc">10 motor driver channels · servo + pneumatic relay outputs</div></div>
+              <div class="tech-item"><div class="tech-name">Interface Board</div><div class="tech-desc">Detachable, shield-style · swappable MCU layer</div></div>
+              <div class="tech-item"><div class="tech-name">Power Distribution</div><div class="tech-desc">On-board regulation for logic + peripheral rails</div></div>
+              <div class="tech-item"><div class="tech-name">Assembly</div><div class="tech-desc">100% hand-soldered SMD, in-house by the team</div></div>
+              <div class="tech-item"><div class="tech-name">Result</div><div class="tech-desc">First-try bring-up · AIR 5 · DD Robocon 2026</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Award Banner ── -->
+        <div class="loa-pdf-section" style="margin-bottom:0;">
+          <div class="loa-award-banner">
+            ★ &nbsp; Board contributed to the team's <strong>AIR 5 finish</strong> — DD Robocon 2026, IIT Delhi, Prasar Bharati &amp; STPI &nbsp; ★
+          </div>
+        </div>
+
+      </div><!-- end project-body -->
+      <div class="project-more">// More PCBs coming soon — check back for updates</div>
+    </div><!-- end project-card pcb01 -->
+
+  </div>
+</section>
+
 <!-- ═══════════════════════ ACHIEVEMENTS ═══════════════════════ -->
 <section id="achievements">
   <div class="container">
@@ -1080,3 +1202,4 @@
 </script>
 </body>
 </html>
+
