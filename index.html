@@ -500,18 +500,13 @@
   <div class="container">
     <div class="hero-grid">
       <div class="hero-left">
-        <div class="hero-tag">Embedded Systems · Robotics · Defence Tech</div>
+        <div class="hero-tag">Embedded Systems · FPGA/HDL · Robotics</div>
         <h1 class="hero-name">Vineet<br><span class="highlight">Sharma</span></h1>
         <div class="hero-title">Electronics Engineer</div>
         <p class="hero-bio">
-          I'm passionate about robotics and embedded systems, with a strong interest in building practical,
-          real-world machines. I enjoy working on projects that combine hardware and software — especially
-          in areas like motor control, wireless communication, and system design.<br><br>
-          From gesture-controlled systems to autonomous robots, I focus on creating efficient, reliable,
-          and well-engineered solutions. Currently exploring advanced topics like long-range communication
-          and intelligent robotic systems.<br><br>
-          My vision: to build great, powerful embedded systems for India — machines that protect, serve,
-          and inspire.
+          Embedded systems engineer building real hardware — from FPGA-based autonomous robots to
+          field-deployed defence UGVs. I work across digital hardware (Verilog/HDL), PCB design, and
+          motor control, with growing focus on FPGA implementation of intelligent, real-time systems.
         </p>
         <div class="hero-stats">
           <div class="stat"><div class="stat-num">Top 30</div><div class="stat-label">National Innovation</div></div>
@@ -535,23 +530,18 @@
     <div class="skills-strip">
       <div class="skills-label">// Core Competencies</div>
       <div class="skills-list">
+        <span class="skill-tag">FPGA / Verilog HDL</span>
+        <span class="skill-tag">Digital Hardware Design</span>
         <span class="skill-tag">Teensy 4.1</span>
         <span class="skill-tag">Arduino / ESP32</span>
         <span class="skill-tag">BLDC Motor Control</span>
-        <span class="skill-tag">ESC Programming</span>
-        <span class="skill-tag">PCB Design</span>
+        <span class="skill-tag">PCB Design (Altium)</span>
         <span class="skill-tag">RF Telemetry</span>
-        <span class="skill-tag">Stepper Drivers</span>
-        <span class="skill-tag">PWM Control</span>
         <span class="skill-tag">I2C / SPI / UART</span>
         <span class="skill-tag">Power Electronics</span>
-        <span class="skill-tag">Skid-Steer Drive</span>
-        <span class="skill-tag">Video Transmission</span>
         <span class="skill-tag">Embedded C/C++</span>
-        <span class="skill-tag">System Integration</span>
-        <span class="skill-tag">FPGA / Verilog</span>
-        <span class="skill-tag">CPU Architecture</span>
         <span class="skill-tag">Parallel Processing</span>
+        <span class="skill-tag">Real-Time Sensor Systems</span>
       </div>
     </div>
   </div>
@@ -578,9 +568,9 @@
           <div class="project-title">UGV A/T</div>
           <div class="project-subtitle">Anti-Tank Mine Laying System</div>
           <p class="project-desc">
-            A rugged, semi-autonomous Unmanned Ground Vehicle developed in collaboration with the
-            19 Engineer Regiment, Indian Army. Performs automated ground excavation, precision mine
-            placement, and camouflage — keeping soldiers out of harm's way in high-threat environments.
+            Semi-autonomous UGV built with the 19 Engineer Regiment, Indian Army, for automated ground
+            excavation, precision mine placement, and camouflage — keeping soldiers out of high-threat
+            environments. Field-tested in sub-zero, high-altitude conditions.
           </p>
           <div class="project-tags">
             <span class="ptag">Teensy 4.1</span>
@@ -651,31 +641,26 @@
           <div>
             <div class="section-sub-title">// My Role — Embedded Systems Lead</div>
             <ul class="role-list">
-              <li>Designed the complete <strong>control system architecture</strong> and custom interface board using Teensy 4.1 (ARM Cortex-M7, 600 MHz, 55 GPIO)</li>
-              <li>Engineered the <strong>BLDC hub motor drive system</strong> with Atpole 48V–60V ESCs in a 4-wheel skid-steer configuration for omnidirectional movement</li>
-              <li>Integrated <strong>dual 433 MHz telemetry modules</strong> for 300–500 m wireless command and data exchange with the operator laptop</li>
-              <li>Programmed <strong>dual Nema 34 stepper motors</strong> with TB6600 drivers for precision lead-screw auger control (13 kg auger assembly)</li>
-              <li>Configured <strong>Cytron MDD20A dual-channel motor drivers</strong> for all DC planetary gear mechanisms</li>
-              <li>Set up <strong>5.8 GHz live video transmission</strong> using SpeedyBee TX800 and Skydroid OTG Dual Antenna receiver with RunCam Phoenix 2 cameras</li>
-              <li>Designed and fabricated <strong>interface and power PCBs in-house</strong> including fixed and variable buck converters</li>
-              <li>Managed <strong>13S LiFePO4 20 Ah battery</strong> power distribution for 100–120 min runtime under field conditions</li>
-              <li>Led <strong>electronics field testing</strong> at army unit — validated in sub-zero and high-altitude conditions</li>
-              <li>Handled <strong>budget, procurement, and resource management</strong> for the entire electronics development cycle</li>
+              <li>Designed the full <strong>control system architecture</strong> around Teensy 4.1 (ARM Cortex-M7, 600 MHz) and custom interface board</li>
+              <li>Built the <strong>BLDC hub motor drive system</strong> — 4-wheel skid-steer with per-wheel ESC control</li>
+              <li>Integrated <strong>dual 433 MHz telemetry</strong> for 300–500 m wireless command/data link</li>
+              <li>Programmed <strong>dual Nema 34 steppers</strong> (TB6600 drivers) for precision auger positioning</li>
+              <li>Set up <strong>5.8 GHz FPV video transmission</strong> for live front + mine-drop feeds</li>
+              <li>Designed &amp; fabricated <strong>interface/power PCBs in-house</strong>, including buck converters</li>
+              <li>Managed <strong>13S LiFePO4 power system</strong> (100–120 min runtime) and led field testing at the army unit</li>
             </ul>
           </div>
           <div>
             <div class="section-sub-title">// Electronics Stack</div>
             <div class="tech-grid">
-              <div class="tech-item"><div class="tech-name">Teensy 4.1</div><div class="tech-desc">ARM Cortex-M7 @ 600 MHz · 55 GPIO · Central MCU</div></div>
-              <div class="tech-item"><div class="tech-name">Atpole BLDC Hub</div><div class="tech-desc">10" hub motors · 48–60 V · 900 W · 60 Nm</div></div>
-              <div class="tech-item"><div class="tech-name">Holybro Telemetry</div><div class="tech-desc">433 MHz · 100 mW · 300–500 m range</div></div>
-              <div class="tech-item"><div class="tech-name">Nema 34 Stepper</div><div class="tech-desc">TB6600 driver · 4 A peak · 1/32 microstep</div></div>
-              <div class="tech-item"><div class="tech-name">Cytron MDD20A</div><div class="tech-desc">Dual-ch · 12 V DC · 20 A cont / 60 A peak</div></div>
-              <div class="tech-item"><div class="tech-name">SpeedyBee TX800</div><div class="tech-desc">5.8 GHz video TX · FPV live feed</div></div>
-              <div class="tech-item"><div class="tech-name">RunCam Phoenix 2</div><div class="tech-desc">2× cameras — front view + mine-drop feed</div></div>
+              <div class="tech-item"><div class="tech-name">Teensy 4.1</div><div class="tech-desc">ARM Cortex-M7 @ 600 MHz · Central MCU</div></div>
+              <div class="tech-item"><div class="tech-name">Atpole BLDC Hub</div><div class="tech-desc">48–60 V · 900 W · 60 Nm</div></div>
+              <div class="tech-item"><div class="tech-name">Holybro Telemetry</div><div class="tech-desc">433 MHz · 300–500 m range</div></div>
+              <div class="tech-item"><div class="tech-name">Nema 34 + TB6600</div><div class="tech-desc">4 A peak · 1/32 microstep</div></div>
+              <div class="tech-item"><div class="tech-name">Cytron MDD20A</div><div class="tech-desc">Dual-ch · 20 A cont / 60 A peak</div></div>
+              <div class="tech-item"><div class="tech-name">SpeedyBee TX800</div><div class="tech-desc">5.8 GHz video TX · FPV feed</div></div>
               <div class="tech-item"><div class="tech-name">LiFePO4 Battery</div><div class="tech-desc">13S · 20 Ah · ~110 min runtime</div></div>
-              <div class="tech-item"><div class="tech-name">PCA9685</div><div class="tech-desc">16-ch I2C PWM driver · servo/ESC control</div></div>
-              <div class="tech-item"><div class="tech-name">Buck Converters</div><div class="tech-desc">Fixed 12 V/10 A + variable MP1584 bucks</div></div>
+              <div class="tech-item"><div class="tech-name">Buck Converters</div><div class="tech-desc">Fixed + variable, in-house PCB</div></div>
             </div>
           </div>
         </div>
@@ -683,12 +668,12 @@
         <!-- ── Subsystems ── -->
         <div class="section-sub-title">// Electronic Subsystems</div>
         <div class="subsystems">
-          <div class="sub-card"><div class="sub-icon">🚗</div><div class="sub-title">Drive Control</div><div class="sub-detail">4× BLDC hub motors in skid-steer layout. Independent ESC per wheel enables tank-style pivot and omnidirectional movement at 20–30 km/h.</div></div>
-          <div class="sub-card"><div class="sub-icon">📡</div><div class="sub-title">Telemetry &amp; Comms</div><div class="sub-detail">Dual 433 MHz Holybro modules for UGV ↔ laptop link. Range extendable to km-scale with patch antennas. Handles drive + mechanism commands.</div></div>
-          <div class="sub-card"><div class="sub-icon">⚙️</div><div class="sub-title">Mechanism Control</div><div class="sub-detail">Planetary DC motors via Cytron MDD20A for mine/mud-drop. Nema 34 steppers via TB6600 for precision lead-screw auger positioning.</div></div>
-          <div class="sub-card"><div class="sub-icon">📹</div><div class="sub-title">Video Transmission</div><div class="sub-detail">SpeedyBee TX800 5.8 GHz on-board. Skydroid OTG receiver at operator station. RunCam Phoenix 2 for front and mine-drop monitoring.</div></div>
-          <div class="sub-card"><div class="sub-icon">⚡</div><div class="sub-title">Power Distribution</div><div class="sub-detail">13S LiFePO4 20 Ah as main bus. XT60 parallel bus for ESCs. Fixed 12 V/10 A bucks × 2 parallel for actuators. Variable bucks for MCU logic.</div></div>
-          <div class="sub-card"><div class="sub-icon">🖥️</div><div class="sub-title">Interface Board</div><div class="sub-detail">Custom in-house PCB with Teensy 4.1 at centre. All ESC channels, stepper driver headers, telemetry UART, relay for VTX, I2C PWM expander.</div></div>
+          <div class="sub-card"><div class="sub-icon">🚗</div><div class="sub-title">Drive Control</div><div class="sub-detail">4× BLDC hub motors, skid-steer. Independent ESC per wheel for tank-style pivot at 20–30 km/h.</div></div>
+          <div class="sub-card"><div class="sub-icon">📡</div><div class="sub-title">Telemetry &amp; Comms</div><div class="sub-detail">Dual 433 MHz link to operator laptop, handling drive + mechanism commands.</div></div>
+          <div class="sub-card"><div class="sub-icon">⚙️</div><div class="sub-title">Mechanism Control</div><div class="sub-detail">Planetary DC motors for mine/mud-drop; Nema 34 steppers for precision auger positioning.</div></div>
+          <div class="sub-card"><div class="sub-icon">📹</div><div class="sub-title">Video Transmission</div><div class="sub-detail">5.8 GHz on-board TX, dual-antenna receiver, dual RunCam cameras.</div></div>
+          <div class="sub-card"><div class="sub-icon">⚡</div><div class="sub-title">Power Distribution</div><div class="sub-detail">13S LiFePO4 main bus with fixed and variable bucks for actuators and logic.</div></div>
+          <div class="sub-card"><div class="sub-icon">🖥️</div><div class="sub-title">Interface Board</div><div class="sub-detail">Custom in-house PCB — Teensy 4.1, ESC channels, stepper headers, telemetry UART.</div></div>
         </div>
 
         <!-- ── Development Phases ── -->
@@ -696,37 +681,28 @@
         <div class="phases">
           <div class="phase">
             <div class="phase-num">01</div>
-            <div class="phase-title">Design Phase</div>
+            <div class="phase-title">Design</div>
             <ul class="phase-items">
-              <li>CAD design of 4-wheel drive system</li>
-              <li>Earth-auger digging mechanism</li>
-              <li>Mine-dropping mechanism</li>
-              <li>Camouflage mechanism</li>
+              <li>CAD, drive &amp; mechanisms</li>
               <li>Control system architecture</li>
-              <li>Interface and power PCB design</li>
+              <li>Interface/power PCB design</li>
             </ul>
           </div>
           <div class="phase">
             <div class="phase-num">02</div>
-            <div class="phase-title">Fabrication &amp; Testing</div>
+            <div class="phase-title">Fab &amp; Test</div>
             <ul class="phase-items">
-              <li>Mechanism fabrication</li>
-              <li>PCB in-house manufacturing</li>
-              <li>Control systems testing</li>
-              <li>Architecture validated for accuracy</li>
-              <li>Power analysis and optimisation</li>
-              <li>Field needs alignment</li>
+              <li>In-house PCB manufacturing</li>
+              <li>Control systems validation</li>
+              <li>Power optimisation</li>
             </ul>
           </div>
           <div class="phase">
             <div class="phase-num">03</div>
             <div class="phase-title">Field Deployment</div>
             <ul class="phase-items">
-              <li>Final wiring and system integration</li>
               <li>Army unit field testing</li>
-              <li>Runtime, power, accuracy checks</li>
-              <li>Sub-zero electronics validation</li>
-              <li>High-altitude performance tuning</li>
+              <li>Sub-zero, high-altitude validation</li>
               <li>Top 30 — Inno Yodha 2025–26</li>
             </ul>
           </div>
@@ -767,7 +743,206 @@
 
 
     <!-- ═══════════════════════════════════════════════════════════ -->
-    <!-- PROJECT 02 — DD Robocon 2025 Basketball Bots               -->
+    <!-- PROJECT 02 — eYRC MazeSolver Bot (moved up — FPGA/Verilog priority for this audience) -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <div class="project-card">
+      <div class="project-header">
+        <div class="project-header-img">
+          <img src="media/eyrc/bot-eyrc.jpeg" alt="eYRC MazeSolver Bot in Arena">
+        </div>
+        <div class="project-header-info">
+          <div class="project-number">02</div>
+          <div class="project-category">// FPGA Robotics · Autonomous Navigation · IIT Bombay</div>
+          <div class="project-title">MazeSolver Bot</div>
+          <div class="project-subtitle">e-Yantra Robotics Competition 2025–26</div>
+          <p class="project-desc">
+            FPGA-powered autonomous robot for eYRC 2025–26 (IIT Bombay, Ministry of Education). Runs on
+            a De0-Nano (Altera Cyclone IV), navigating dynamic mazes in real time while sensing
+            temperature, humidity, and soil moisture at arena waypoints — all via parallel hardware logic.
+          </p>
+          <div class="project-tags">
+            <span class="ptag">FPGA / Verilog HDL</span>
+            <span class="ptag">De0-Nano · Cyclone IV</span>
+            <span class="ptag">Custom CPU Core</span>
+            <span class="ptag">Parallel Processing</span>
+            <span class="ptag">ModelSim Verification</span>
+            <span class="ptag">Real-Time Sensor Fusion</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-body">
+
+        <!-- ── MEDIA GRID ── -->
+        <div class="section-sub-title" style="margin-bottom:18px;">// Build Documentation &amp; Arena Media</div>
+        <div class="media-grid">
+
+          <!-- Col 1 tall: bot in eYRC arena -->
+          <div class="media-cell tall">
+            <img src="media/eyrc/bot-eyrc.jpeg" alt="MazeSolver Bot navigating eYRC 25-26 arena"
+                 onclick="openLightbox(this.src)">
+            <div class="media-label">MazeSolver Bot · eYRC 25–26 Arena</div>
+          </div>
+
+          <!-- Col 2 row 1: robot close-up with sensors -->
+          <div class="media-cell">
+            <img src="media/eyrc/robotickit-eyrc.jpeg" alt="MazeSolver Bot sensor assembly close-up"
+                 onclick="openLightbox(this.src)">
+            <div class="media-label">Robot — Sensor &amp; Electronics Assembly</div>
+          </div>
+
+          <!-- Col 3 row 1: ModelSim simulation screenshot -->
+          <div class="media-cell">
+            <img src="media/eyrc/simulation.jpeg" alt="ModelSim Intel FPGA Simulation — DHT11 Verilog"
+                 onclick="openLightbox(this.src)">
+            <div class="media-label">ModelSim · DHT11 Verilog Simulation</div>
+          </div>
+
+          <!-- Col 2 row 2: e-Yantra kit unboxing -->
+          <div class="media-cell">
+            <img src="media/eyrc/eyantra_frontv.jpeg" alt="e-Yantra hardware kit from IIT Bombay"
+                 onclick="openLightbox(this.src)">
+            <div class="media-label">e-Yantra Kit · De0-Nano + Components · IIT Bombay</div>
+          </div>
+
+          <!-- Col 3 row 2: team photo -->
+          <div class="media-cell">
+            <img src="media/eyrc/team-eyrc.jpeg" alt="MazeSolver Bot team — eYRC 2025-26"
+                 onclick="openLightbox(this.src)">
+            <div class="media-label">Team — MazeSolver Bot · eYRC 25–26</div>
+          </div>
+
+        </div><!-- end media-grid -->
+
+        <!-- ── My Role + Tech Stack ── -->
+        <div class="project-body-grid">
+          <div>
+            <div class="section-sub-title">// My Role — FPGA Systems &amp; Firmware</div>
+            <ul class="role-list">
+              <li>Designed a <strong>custom CPU architecture on FPGA fabric</strong> in Verilog HDL (De0-Nano, Altera Cyclone IV)</li>
+              <li>Wrote a <strong>DHT11 sensor driver in Verilog</strong> (1-wire protocol), verified end-to-end in ModelSim</li>
+              <li>Built a <strong>parallel processing architecture</strong> — concurrent sensor acquisition, motor FSM, maze logic, and UART, all as hardware logic with no CPU bottleneck</li>
+              <li>Developed a <strong>real-time maze-solving FSM</strong> for dynamic, reconfigurable arena navigation</li>
+              <li>Designed <strong>HC-SR04 ultrasonic drivers</strong> in Verilog for multi-directional obstacle detection</li>
+              <li>Implemented a <strong>custom UART module</strong> in Verilog for wireless sensor-data transmission</li>
+              <li>Ranked <strong>Top 50 nationally</strong>, competing through simulation, hardware build, and arena rounds — Level 3 Certificate, IIT Bombay</li>
+            </ul>
+          </div>
+          <div>
+            <div class="section-sub-title">// Technology Stack</div>
+            <div class="tech-grid">
+              <div class="tech-item"><div class="tech-name">De0-Nano FPGA</div><div class="tech-desc">Altera Cyclone IV EP4CE22F17C6 · 22K LEs</div></div>
+              <div class="tech-item"><div class="tech-name">Verilog HDL</div><div class="tech-desc">Custom CPU · sensor drivers · motor FSM · UART</div></div>
+              <div class="tech-item"><div class="tech-name">DHT11 Sensor</div><div class="tech-desc">1-wire protocol · Verilog peripheral driver</div></div>
+              <div class="tech-item"><div class="tech-name">HC-SR04 Ultrasonic</div><div class="tech-desc">Verilog trigger/echo driver</div></div>
+              <div class="tech-item"><div class="tech-name">ModelSim 2020.1</div><div class="tech-desc">HDL simulation &amp; waveform verification</div></div>
+              <div class="tech-item"><div class="tech-name">Parallel Processing</div><div class="tech-desc">Concurrent modules on FPGA fabric</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Subsystems ── -->
+        <div class="section-sub-title">// FPGA Subsystems</div>
+        <div class="subsystems">
+          <div class="sub-card">
+            <div class="sub-icon">🧠</div>
+            <div class="sub-title">Custom CPU Core</div>
+            <div class="sub-detail">Purpose-built processor in Verilog on Cyclone IV — instruction decode plus concurrent sensor/motor control as hardware logic.</div>
+          </div>
+          <div class="sub-card">
+            <div class="sub-icon">🌡️</div>
+            <div class="sub-title">Environmental Sensing</div>
+            <div class="sub-detail">DHT11 1-wire driver + capacitive soil moisture sensing, packetized and sent at arena waypoints.</div>
+          </div>
+          <div class="sub-card">
+            <div class="sub-icon">🗺️</div>
+            <div class="sub-title">Maze Navigation</div>
+            <div class="sub-detail">HC-SR04 ultrasonic array + Verilog FSM for real-time adaptive navigation of reconfigured layouts.</div>
+          </div>
+          <div class="sub-card">
+            <div class="sub-icon">⚙️</div>
+            <div class="sub-title">Motor Control</div>
+            <div class="sub-detail">Differential DC drive with PWM generated directly from FPGA GPIO for precise wall-following.</div>
+          </div>
+          <div class="sub-card">
+            <div class="sub-icon">🔄</div>
+            <div class="sub-title">Parallel Processing</div>
+            <div class="sub-detail">Sensing, navigation, motor control, and UART run fully in parallel — true hardware concurrency over MCU-based designs.</div>
+          </div>
+          <div class="sub-card">
+            <div class="sub-icon">📶</div>
+            <div class="sub-title">Serial Communication</div>
+            <div class="sub-detail">Custom Verilog UART TX/RX, ModelSim-verified before hardware deployment.</div>
+          </div>
+        </div>
+
+        <!-- ── Competition Phases ── -->
+        <div class="section-sub-title">// Competition Phases</div>
+        <div class="phases">
+          <div class="phase">
+            <div class="phase-num">01</div>
+            <div class="phase-title">Qualification</div>
+            <ul class="phase-items">
+              <li>FPGA architecture planning</li>
+              <li>DHT11 &amp; UART — ModelSim verified</li>
+              <li>Top 50 nationally · kit awarded</li>
+            </ul>
+          </div>
+          <div class="phase">
+            <div class="phase-num">02</div>
+            <div class="phase-title">Hardware Build</div>
+            <ul class="phase-items">
+              <li>De0-Nano setup, chassis assembly</li>
+              <li>Sensor integration &amp; wiring</li>
+              <li>Parallel subsystem integration</li>
+            </ul>
+          </div>
+          <div class="phase">
+            <div class="phase-num">03</div>
+            <div class="phase-title">Arena Competition</div>
+            <ul class="phase-items">
+              <li>Live maze navigation runs</li>
+              <li>Dynamic wall reconfiguration handled</li>
+              <li>Level 3 Certificate · IIT Bombay</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ── eYRC Certificate PDF ── -->
+        <div class="section-sub-title">// e-Yantra Certificate — IIT Bombay</div>
+        <div class="loa-pdf-section">
+          <div class="loa-pdf-header">
+            <div class="loa-pdf-title-row">
+              <div class="loa-seal-mini">
+                <div class="loa-seal-mini-text" style="font-size:9px;letter-spacing:.05em;">eYRC</div>
+                <div class="loa-seal-mini-sub">IIT-B</div>
+              </div>
+              <div>
+                <div class="loa-pdf-title">Certificate of Participation</div>
+                <div class="loa-pdf-from">Prof. Shivaram Kalyanakrishnan · Principal Investigator, e-Yantra · IIT Bombay · ERTS Lab, CSE Dept</div>
+              </div>
+            </div>
+            <div class="loa-pdf-meta">
+              <span>EYRC2025-261775731095</span>
+              <span>eYRC 2025–26</span>
+              <span>MazeSolver Bot Theme</span>
+            </div>
+          </div>
+          <div class="loa-award-banner">
+            ★ &nbsp; Team MB-1737–2416 · <strong>Top 50 nationally</strong> — e-Yantra Robotics Competition 2025–26 · IIT Bombay · Sponsored by MoE, Govt. of India &nbsp; ★
+          </div>
+          <iframe
+            class="loa-pdf-viewer"
+            src="media/eyrc/eyrc_2026-MB_1737-2416-vineet-sharma.pdf"
+            title="e-Yantra Certificate of Participation — Vineet Sharma · eYRC 2025-26">
+          </iframe>
+        </div>
+
+      </div><!-- end project-body -->
+    </div><!-- end project-card eyrc -->
+
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!-- PROJECT 03 — DD Robocon 2025 Basketball Bots               -->
     <!-- ═══════════════════════════════════════════════════════════ -->
     <div class="project-card">
       <div class="project-header">
@@ -775,17 +950,14 @@
           <img src="media/DD1.jpeg" alt="DD Robocon 2025 Basketball Bots at IIT Delhi">
         </div>
         <div class="project-header-info">
-          <div class="project-number">02</div>
+          <div class="project-number">03</div>
           <div class="project-category">// Robotics Competition · Embedded Systems · Motor Control</div>
           <div class="project-title">DD Robocon 2025 Basketball Bots</div>
           <div class="project-subtitle">National Robotics Championship · IIT Delhi</div>
           <p class="project-desc">
-            A competitive robot-basketball system developed for DD Robocon 2025 at IIT Delhi.
-            The 2025 challenge, based on ABU Robocon's <em>Robot Basketball — Team Effort, Ultimate Success</em>,
-            put two robots per team on the court to dribble, pass, shoot, and defend under a 20-second shot clock.
-            My work was focused on the electronics and embedded side of the project — contributing to the custom PCB
-            design and developing the motor-control system around a Teensy microcontroller and VESC ESCs for
-            FOC-based BLDC motor control.
+            Competitive robot-basketball system for DD Robocon 2025 (ABU Robocon format) at IIT Delhi —
+            two robots per team dribbling, passing, shooting, and defending under a 20-second shot clock.
+            Focused on the electronics/embedded side: custom PCB and FOC-based BLDC motor control.
           </p>
           <div class="project-tags">
             <span class="ptag">Teensy MCU</span>
@@ -858,26 +1030,23 @@
           <div>
             <div class="section-sub-title">// My Role — Electronics &amp; Embedded Systems</div>
             <ul class="role-list">
-              <li>Worked as part of the <strong>electronics and embedded systems team</strong>, focusing primarily on motor control and embedded integration.</li>
-              <li>Worked with a <strong>Teensy microcontroller and VESC ESCs</strong> for precise BLDC motor control.</li>
-              <li>Implemented and worked with <strong>Field-Oriented Control (FOC)</strong> for smooth, responsive and efficient motor operation.</li>
-              <li>Contributed to the <strong>custom PCB design</strong> used to integrate the controller, motor-control interfaces and supporting electronics.</li>
-              <li>Developed and debugged the <strong>embedded motor-control layer</strong>, connecting software-level commands with the robot's drive hardware.</li>
-              <li>Worked on electronics integration and testing to make the motor-control system reliable enough for repeated competition-floor operation.</li>
+              <li>Worked in the <strong>electronics/embedded team</strong>, focused on motor control and embedded integration</li>
+              <li>Used a <strong>Teensy MCU with VESC ESCs</strong> for precise BLDC motor control</li>
+              <li>Implemented <strong>Field-Oriented Control (FOC)</strong> for smooth, efficient motor response</li>
+              <li>Contributed to the <strong>custom PCB</strong> integrating controller, motor interfaces, and support electronics</li>
+              <li>Developed and debugged the <strong>embedded motor-control layer</strong> for repeated competition-floor reliability</li>
             </ul>
           </div>
 
           <div>
             <div class="section-sub-title">// Technology Stack</div>
             <div class="tech-grid">
-              <div class="tech-item"><div class="tech-name">Teensy</div><div class="tech-desc">Microcontroller platform for embedded motor-control and system interfacing</div></div>
-              <div class="tech-item"><div class="tech-name">VESC ESC</div><div class="tech-desc">BLDC motor controller used for high-performance drive control</div></div>
-              <div class="tech-item"><div class="tech-name">FOC</div><div class="tech-desc">Field-Oriented Control for precise and efficient BLDC operation</div></div>
-              <div class="tech-item"><div class="tech-name">BLDC Motors</div><div class="tech-desc">High-performance motors forming the robot's drive system</div></div>
-              <div class="tech-item"><div class="tech-name">Embedded C/C++</div><div class="tech-desc">Firmware development, control logic and hardware interfacing</div></div>
-              <div class="tech-item"><div class="tech-name">Custom PCB</div><div class="tech-desc">Contributed to schematic/layout and electronics integration</div></div>
-              <div class="tech-item"><div class="tech-name">Motor Control</div><div class="tech-desc">Command generation, tuning, debugging and system-level integration</div></div>
-              <div class="tech-item"><div class="tech-name">System Integration</div><div class="tech-desc">Embedded electronics integrated with the competition robot</div></div>
+              <div class="tech-item"><div class="tech-name">Teensy</div><div class="tech-desc">Embedded motor-control platform</div></div>
+              <div class="tech-item"><div class="tech-name">VESC ESC</div><div class="tech-desc">High-performance BLDC drive control</div></div>
+              <div class="tech-item"><div class="tech-name">FOC</div><div class="tech-desc">Precise, efficient BLDC operation</div></div>
+              <div class="tech-item"><div class="tech-name">Embedded C/C++</div><div class="tech-desc">Firmware &amp; hardware interfacing</div></div>
+              <div class="tech-item"><div class="tech-name">Custom PCB</div><div class="tech-desc">Schematic/layout contribution</div></div>
+              <div class="tech-item"><div class="tech-name">System Integration</div><div class="tech-desc">Electronics ↔ competition robot</div></div>
             </div>
           </div>
         </div>
@@ -888,67 +1057,22 @@
           <div class="sub-card">
             <div class="sub-icon">🏀</div>
             <div class="sub-title">Robot Basketball</div>
-            <div class="sub-detail">DD Robocon 2025 was built around Robot Basketball. Two robots per team had to work together to move the ball, attack, defend and score under strict time constraints.</div>
+            <div class="sub-detail">Two robots per team moving, attacking, defending, and scoring under strict time constraints.</div>
           </div>
           <div class="sub-card">
             <div class="sub-icon">⚡</div>
             <div class="sub-title">Fast Motor Response</div>
-            <div class="sub-detail">Competitive gameplay demands quick acceleration, controlled motion and repeatable responses. FOC-based BLDC control helped make the drive system precise and responsive.</div>
+            <div class="sub-detail">FOC-based BLDC control gave precise, repeatable drive response for competitive play.</div>
           </div>
           <div class="sub-card">
             <div class="sub-icon">🔧</div>
             <div class="sub-title">Hardware Integration</div>
-            <div class="sub-detail">The electronics had to work as one system — controller, ESCs, motors and custom PCB — while surviving repeated testing and competition-floor operation.</div>
-          </div>
-          <div class="sub-card">
-            <div class="sub-icon">🎯</div>
-            <div class="sub-title">Precision Control</div>
-            <div class="sub-detail">The game rewarded accurate movement and coordinated robot actions, making low-level motor control an important part of the overall robotic performance.</div>
-          </div>
-          <div class="sub-card">
-            <div class="sub-icon">⏱️</div>
-            <div class="sub-title">20-Second Shot Clock</div>
-            <div class="sub-detail">Each possession was limited to 20 seconds, forcing teams to combine reliable hardware with fast, predictable robot response and effective game strategy.</div>
+            <div class="sub-detail">Controller, ESCs, motors and custom PCB working as one system under repeated testing.</div>
           </div>
           <div class="sub-card">
             <div class="sub-icon">🏆</div>
             <div class="sub-title">National Stage</div>
-            <div class="sub-detail">The 2025 national event at IIT Delhi brought together 40 student teams from across India, with the winner earning the opportunity to represent India at ABU Robocon 2025 in Mongolia.</div>
-          </div>
-        </div>
-
-        <!-- ── Project Phases ── -->
-        <div class="section-sub-title">// My Engineering Workflow</div>
-        <div class="phases">
-          <div class="phase">
-            <div class="phase-num">01</div>
-            <div class="phase-title">Electronics Design</div>
-            <ul class="phase-items">
-              <li>Controller and ESC architecture</li>
-              <li>Custom PCB contribution</li>
-              <li>Motor-control interfaces</li>
-              <li>Power and signal routing</li>
-            </ul>
-          </div>
-          <div class="phase">
-            <div class="phase-num">02</div>
-            <div class="phase-title">Embedded Control</div>
-            <ul class="phase-items">
-              <li>Teensy firmware development</li>
-              <li>VESC motor-controller integration</li>
-              <li>FOC-based BLDC control</li>
-              <li>Motor response tuning and debugging</li>
-            </ul>
-          </div>
-          <div class="phase">
-            <div class="phase-num">03</div>
-            <div class="phase-title">Robot Integration</div>
-            <ul class="phase-items">
-              <li>Electronics-to-robot integration</li>
-              <li>Drive-system testing</li>
-              <li>Repeated hardware debugging</li>
-              <li>Competition preparation at IIT Delhi</li>
-            </ul>
+            <div class="sub-detail">IIT Delhi, 40 student teams nationally — winner advances to ABU Robocon 2025, Mongolia.</div>
           </div>
         </div>
 
@@ -959,223 +1083,8 @@
         </div>
 
       </div><!-- end project-body -->
-    </div><!-- end project-card dd-robocon -->
-
-    <!-- ═══════════════════════════════════════════════════════════ -->
-    <!-- PROJECT 03 — eYRC MazeSolver Bot                           -->
-    <!-- ═══════════════════════════════════════════════════════════ -->
-    <div class="project-card">
-      <div class="project-header">
-        <div class="project-header-img">
-          <img src="media/eyrc/bot-eyrc.jpeg" alt="eYRC MazeSolver Bot in Arena">
-        </div>
-        <div class="project-header-info">
-          <div class="project-number">03</div>
-          <div class="project-category">// FPGA Robotics · Autonomous Navigation · IIT Bombay</div>
-          <div class="project-title">MazeSolver Bot</div>
-          <div class="project-subtitle">e-Yantra Robotics Competition 2025–26</div>
-          <p class="project-desc">
-            An FPGA-powered autonomous robot built from scratch for the e-Yantra Robotics Competition
-            (eYRC 2025–26), hosted by IIT Bombay under the Ministry of Education. Running on a De0-Nano
-            board with Altera Cyclone IV, the robot navigates dynamic warehouse-like mazes in real time
-            while measuring environmental parameters — temperature, humidity, and soil moisture — at
-            designated arena zones.
-          </p>
-          <div class="project-tags">
-            <span class="ptag">FPGA / Verilog HDL</span>
-            <span class="ptag">De0-Nano Board</span>
-            <span class="ptag">Altera Cyclone IV</span>
-            <span class="ptag">DHT11 Sensor</span>
-            <span class="ptag">Soil Moisture v1.2</span>
-            <span class="ptag">Parallel Processing</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="project-body">
-
-        <!-- ── MEDIA GRID ── -->
-        <div class="section-sub-title" style="margin-bottom:18px;">// Build Documentation &amp; Arena Media</div>
-        <div class="media-grid">
-
-          <!-- Col 1 tall: bot in eYRC arena -->
-          <div class="media-cell tall">
-            <img src="media/eyrc/bot-eyrc.jpeg" alt="MazeSolver Bot navigating eYRC 25-26 arena"
-                 onclick="openLightbox(this.src)">
-            <div class="media-label">MazeSolver Bot · eYRC 25–26 Arena</div>
-          </div>
-
-          <!-- Col 2 row 1: robot close-up with sensors -->
-          <div class="media-cell">
-            <img src="media/eyrc/robotickit-eyrc.jpeg" alt="MazeSolver Bot sensor assembly close-up"
-                 onclick="openLightbox(this.src)">
-            <div class="media-label">Robot — Sensor &amp; Electronics Assembly</div>
-          </div>
-
-          <!-- Col 3 row 1: ModelSim simulation screenshot -->
-          <div class="media-cell">
-            <img src="media/eyrc/simulation.jpeg" alt="ModelSim Intel FPGA Simulation — DHT11 Verilog"
-                 onclick="openLightbox(this.src)">
-            <div class="media-label">ModelSim · DHT11 Verilog Simulation</div>
-          </div>
-
-          <!-- Col 2 row 2: e-Yantra kit unboxing -->
-          <div class="media-cell">
-            <img src="media/eyrc/eyantra_frontv.jpeg" alt="e-Yantra hardware kit from IIT Bombay"
-                 onclick="openLightbox(this.src)">
-            <div class="media-label">e-Yantra Kit · De0-Nano + Components · IIT Bombay</div>
-          </div>
-
-          <!-- Col 3 row 2: team photo -->
-          <div class="media-cell">
-            <img src="media/eyrc/team-eyrc.jpeg" alt="MazeSolver Bot team — eYRC 2025-26"
-                 onclick="openLightbox(this.src)">
-            <div class="media-label">Team — MazeSolver Bot · eYRC 25–26</div>
-          </div>
-
-        </div><!-- end media-grid -->
-
-        <!-- ── My Role + Tech Stack ── -->
-        <div class="project-body-grid">
-          <div>
-            <div class="section-sub-title">// My Role — FPGA Systems &amp; Firmware</div>
-            <ul class="role-list">
-              <li>Designed and implemented a <strong>custom CPU architecture on FPGA fabric</strong> using Verilog HDL on the De0-Nano board (Altera Cyclone IV EP4CE22F17C6)</li>
-              <li>Wrote a <strong>DHT11 sensor driver in Verilog</strong> — 1-wire protocol implementation with full ModelSim simulation verification for temperature and humidity acquisition</li>
-              <li>Integrated <strong>Capacitive Soil Moisture Sensor v1.2</strong> for analog zone readings, enabling environmental data logging at warehouse waypoints</li>
-              <li>Implemented a <strong>parallel processing architecture</strong> on FPGA to simultaneously manage sensor acquisition, motor FSM, maze decision logic, and UART comms</li>
-              <li>Developed a <strong>real-time maze-solving algorithm</strong> on FPGA fabric, enabling dynamic navigation of reconfigurable warehouse-like arena layouts</li>
-              <li>Designed <strong>HC-SR04 ultrasonic sensor drivers</strong> in Verilog for multi-directional obstacle detection and wall-following behavior</li>
-              <li>Implemented <strong>UART serial communication module</strong> in Verilog for wireless transmission of environmental readings to the Central Control Unit</li>
-              <li>Assembled the <strong>complete robot hardware</strong> from e-Yantra kit components — chassis, motor mounts, sensor brackets, and wiring harness</li>
-              <li>Ranked among <strong>Top 50 teams nationally</strong>, qualifying for the hardware kit distribution phase with a De0-Nano FPGA board</li>
-              <li>Competed through <strong>all phases of the competition</strong> — simulation, hardware build, and arena — earning a Level 3 Certificate of Participation from IIT Bombay</li>
-            </ul>
-          </div>
-          <div>
-            <div class="section-sub-title">// Technology Stack</div>
-            <div class="tech-grid">
-              <div class="tech-item"><div class="tech-name">De0-Nano FPGA</div><div class="tech-desc">Altera Cyclone IV EP4CE22F17C6 · 22K LEs · Core processing unit</div></div>
-              <div class="tech-item"><div class="tech-name">Verilog HDL</div><div class="tech-desc">Custom CPU · Sensor drivers · Motor FSM · UART TX/RX modules</div></div>
-              <div class="tech-item"><div class="tech-name">DHT11 Sensor</div><div class="tech-desc">1-wire protocol · Temperature + RH acquisition · Verilog peripheral</div></div>
-              <div class="tech-item"><div class="tech-name">Soil Moisture v1.2</div><div class="tech-desc">Capacitive sensing · Zone-level moisture data · ADC interface</div></div>
-              <div class="tech-item"><div class="tech-name">HC-SR04 Ultrasonic</div><div class="tech-desc">Front + side wall detection · Verilog trigger/echo driver</div></div>
-              <div class="tech-item"><div class="tech-name">ModelSim 2020.1</div><div class="tech-desc">Intel FPGA Starter Edition · HDL simulation &amp; waveform analysis</div></div>
-              <div class="tech-item"><div class="tech-name">Parallel Processing</div><div class="tech-desc">Concurrent sensor, motor &amp; comms modules on FPGA fabric — no CPU bottleneck</div></div>
-              <div class="tech-item"><div class="tech-name">UART / Serial Comms</div><div class="tech-desc">Custom Verilog module · Environmental data → Central Control Unit</div></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- ── Subsystems ── -->
-        <div class="section-sub-title">// FPGA Subsystems</div>
-        <div class="subsystems">
-          <div class="sub-card">
-            <div class="sub-icon">🧠</div>
-            <div class="sub-title">Custom CPU Core</div>
-            <div class="sub-detail">Purpose-built processor architecture in Verilog on Cyclone IV FPGA. Handles instruction decode, data flow, and concurrent sensor + motor control — all running as hardware logic.</div>
-          </div>
-          <div class="sub-card">
-            <div class="sub-icon">🌡️</div>
-            <div class="sub-title">Environmental Sensing</div>
-            <div class="sub-detail">DHT11 1-wire driver reads temperature and relative humidity. Capacitive soil moisture sensor v1.2 logs zone moisture levels. Data packetized and transmitted at designated arena waypoints.</div>
-          </div>
-          <div class="sub-card">
-            <div class="sub-icon">🗺️</div>
-            <div class="sub-title">Maze Navigation</div>
-            <div class="sub-detail">HC-SR04 ultrasonic sensors on front and sides. Verilog FSM maze-solving algorithm processes sensor inputs in real time, adapting to dynamically reconfigured warehouse wall layouts.</div>
-          </div>
-          <div class="sub-card">
-            <div class="sub-icon">⚙️</div>
-            <div class="sub-title">Motor Control</div>
-            <div class="sub-detail">Dual DC motor drive with PWM signals generated directly from FPGA GPIO pins. Differential drive enables precise turning and wall-following within narrow maze corridors.</div>
-          </div>
-          <div class="sub-card">
-            <div class="sub-icon">🔄</div>
-            <div class="sub-title">Parallel Processing</div>
-            <div class="sub-detail">FPGA fabric runs sensor acquisition, navigation FSM, motor control, and UART communication fully in parallel — a true hardware concurrency advantage over microcontroller architectures.</div>
-          </div>
-          <div class="sub-card">
-            <div class="sub-icon">📶</div>
-            <div class="sub-title">Serial Communication</div>
-            <div class="sub-detail">Custom UART TX/RX module in Verilog. Environmental sensor data packetized and sent wirelessly to the Central Control Unit. Verified in ModelSim before hardware deployment.</div>
-          </div>
-        </div>
-
-        <!-- ── Competition Phases ── -->
-        <div class="section-sub-title">// Competition Phases</div>
-        <div class="phases">
-          <div class="phase">
-            <div class="phase-num">01</div>
-            <div class="phase-title">Qualification Round</div>
-            <ul class="phase-items">
-              <li>Problem statement analysis</li>
-              <li>FPGA architecture planning</li>
-              <li>Verilog module design</li>
-              <li>DHT11 driver — ModelSim verified</li>
-              <li>UART module simulation</li>
-              <li>Top 50 nationally · Kit awarded</li>
-            </ul>
-          </div>
-          <div class="phase">
-            <div class="phase-num">02</div>
-            <div class="phase-title">Hardware Build</div>
-            <ul class="phase-items">
-              <li>De0-Nano FPGA board setup</li>
-              <li>Full robot chassis assembly</li>
-              <li>Sensor integration and wiring</li>
-              <li>Motor driver FPGA interfacing</li>
-              <li>Real-time sensor data acquisition</li>
-              <li>Parallel subsystem integration</li>
-            </ul>
-          </div>
-          <div class="phase">
-            <div class="phase-num">03</div>
-            <div class="phase-title">Arena Competition</div>
-            <ul class="phase-items">
-              <li>eYRC 25–26 arena field runs</li>
-              <li>Live maze navigation tested</li>
-              <li>Environmental data at zone points</li>
-              <li>Dynamic wall reconfiguration handled</li>
-              <li>Competed through all rounds</li>
-              <li>Level 3 Certificate · IIT Bombay</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- ── eYRC Certificate PDF ── -->
-        <div class="section-sub-title">// e-Yantra Certificate — IIT Bombay</div>
-        <div class="loa-pdf-section">
-          <div class="loa-pdf-header">
-            <div class="loa-pdf-title-row">
-              <div class="loa-seal-mini">
-                <div class="loa-seal-mini-text" style="font-size:9px;letter-spacing:.05em;">eYRC</div>
-                <div class="loa-seal-mini-sub">IIT-B</div>
-              </div>
-              <div>
-                <div class="loa-pdf-title">Certificate of Participation</div>
-                <div class="loa-pdf-from">Prof. Shivaram Kalyanakrishnan · Principal Investigator, e-Yantra · IIT Bombay · ERTS Lab, CSE Dept</div>
-              </div>
-            </div>
-            <div class="loa-pdf-meta">
-              <span>EYRC2025-261775731095</span>
-              <span>eYRC 2025–26</span>
-              <span>MazeSolver Bot Theme</span>
-            </div>
-          </div>
-          <div class="loa-award-banner">
-            ★ &nbsp; Team MB-1737–2416 · <strong>Top 50 nationally</strong> — e-Yantra Robotics Competition 2025–26 · IIT Bombay · Sponsored by MoE, Govt. of India &nbsp; ★
-          </div>
-          <iframe
-            class="loa-pdf-viewer"
-            src="media/eyrc/eyrc_2026-MB_1737-2416-vineet-sharma.pdf"
-            title="e-Yantra Certificate of Participation — Vineet Sharma · eYRC 2025-26">
-          </iframe>
-        </div>
-
-      </div><!-- end project-body -->
       <div class="project-more">// More projects coming soon — check back for updates</div>
-    </div><!-- end project-card eyrc -->
+    </div><!-- end project-card dd-robocon -->
 
   </div>
 </section>
@@ -1201,12 +1110,9 @@
           <div class="project-title">Actuator + Interface Board</div>
           <div class="project-subtitle">Modular Robot Electronics — First-Try Bring-Up</div>
           <p class="project-desc">
-            My first 4-layer PCB — and it worked perfectly on its very first bring-up. Every year at
-            DD Robocon the robot changes — new sensors, new microcontrollers, new control strategies —
-            but the core electronics stay the same. So instead of redesigning from scratch each season,
-            we built a modular two-board system: a fixed Actuator Board and a detachable Interface
-            Board that plugs in like an Arduino shield. Every SMD component on the board, down to the
-            fine-pitch ICs, was hand-soldered in-house by the team.
+            First 4-layer PCB, working perfectly on first bring-up. A modular two-board system — a fixed
+            Actuator Board plus a detachable, shield-style Interface Board — so the controller can be
+            swapped season to season without touching the power layer. Every SMD hand-soldered in-house.
           </p>
           <div class="project-tags">
             <span class="ptag">4-Layer PCB</span>
@@ -1266,22 +1172,20 @@
           <div>
             <div class="section-sub-title">// Design &amp; Assembly Highlights</div>
             <ul class="role-list">
-              <li>Designed a <strong>4-layer PCB</strong> end-to-end in Altium — schematic capture, layout, and manufacturing files</li>
-              <li>Architected a <strong>modular two-board system</strong>: a fixed Actuator Board plus a detachable, shield-style Interface Board — so the controller can be swapped season to season without touching the power/actuation layer</li>
-              <li>Routed dedicated channels for <strong>10 DC motor drivers, servo interfaces, and pneumatic relay control</strong>, alongside on-board power regulation and distribution</li>
-              <li>Hand-soldered <strong>every SMD component</strong> in-house with the team — fine-pitch ICs down to passives</li>
-              <li>Board came up clean on the <strong>very first bring-up</strong> — first 4-layer design to do so first try</li>
-              <li>Contributed to the team's <strong>AIR 5 finish</strong> at DD Robocon 2026, IIT Delhi</li>
+              <li>Designed a <strong>4-layer PCB</strong> end-to-end in Altium — schematic, layout, manufacturing files</li>
+              <li>Architected a <strong>modular two-board system</strong>: fixed Actuator Board + detachable, shield-style Interface Board</li>
+              <li>Routed channels for <strong>10 motor drivers, servo interfaces, and pneumatic relay control</strong> with on-board power regulation</li>
+              <li>Hand-soldered <strong>every SMD component</strong> in-house with the team</li>
+              <li>Clean <strong>first-try bring-up</strong> — contributed to the team's <strong>AIR 5 finish</strong> at DD Robocon 2026</li>
             </ul>
           </div>
           <div>
             <div class="section-sub-title">// Board Specs</div>
             <div class="tech-grid">
-              <div class="tech-item"><div class="tech-name">4-Layer Stack-Up</div><div class="tech-desc">Designed in Altium · manufactured by PCB Power</div></div>
-              <div class="tech-item"><div class="tech-name">Actuator Board</div><div class="tech-desc">10 motor driver channels · servo + pneumatic relay outputs</div></div>
-              <div class="tech-item"><div class="tech-name">Interface Board</div><div class="tech-desc">Detachable, shield-style · swappable MCU layer</div></div>
-              <div class="tech-item"><div class="tech-name">Power Distribution</div><div class="tech-desc">On-board regulation for logic + peripheral rails</div></div>
-              <div class="tech-item"><div class="tech-name">Assembly</div><div class="tech-desc">100% hand-soldered SMD, in-house by the team</div></div>
+              <div class="tech-item"><div class="tech-name">4-Layer Stack-Up</div><div class="tech-desc">Designed in Altium · PCB Power manufactured</div></div>
+              <div class="tech-item"><div class="tech-name">Actuator Board</div><div class="tech-desc">10 motor channels · servo + pneumatic outputs</div></div>
+              <div class="tech-item"><div class="tech-name">Interface Board</div><div class="tech-desc">Detachable, shield-style · swappable MCU</div></div>
+              <div class="tech-item"><div class="tech-name">Assembly</div><div class="tech-desc">100% hand-soldered SMD, in-house</div></div>
               <div class="tech-item"><div class="tech-name">Result</div><div class="tech-desc">First-try bring-up · AIR 5 · DD Robocon 2026</div></div>
             </div>
           </div>
@@ -1335,17 +1239,14 @@
         </div>
         <div class="cert-meta">Completed · Online Course · Mathematics &amp; Reasoning</div>
         <div class="cert-desc">
-          A comprehensive Quantitative Aptitude course covering numerical ability, data interpretation,
-          logical reasoning, and mathematical problem solving — building the analytical foundation
-          required for engineering and competitive examinations.
+          Numerical ability, data interpretation, and logical reasoning — building the analytical
+          foundation for engineering and competitive examinations.
         </div>
         <div class="cert-topics">
           <span class="cert-topic">Number Systems</span>
           <span class="cert-topic">Algebra</span>
           <span class="cert-topic">Data Interpretation</span>
           <span class="cert-topic">Logical Reasoning</span>
-          <span class="cert-topic">Arithmetic</span>
-          <span class="cert-topic">Problem Solving</span>
         </div>
         <div class="cert-pdf-embed">
           <iframe
@@ -1371,7 +1272,7 @@
 <!-- ═══════════════════════ FOOTER ═══════════════════════ -->
 <footer>
   <div class="footer-name">Vineet Sharma</div>
-  <div class="footer-sub">Electronics Engineer · Embedded Systems · Defence Robotics · FPGA Systems</div>
+  <div class="footer-sub">Electronics Engineer · FPGA/HDL Systems · Embedded Robotics · Defence Tech</div>
 </footer>
 
 <script>
