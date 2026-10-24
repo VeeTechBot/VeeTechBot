@@ -37,6 +37,7 @@
     background-size:40px 40px;
     pointer-events:none; z-index:0;
   }
+  a { color:inherit; }
 
   /* ── NAV ── */
   nav {
@@ -48,10 +49,10 @@
   }
   .nav-logo {
     font-family:'Oswald',sans-serif; font-size:18px; font-weight:700;
-    letter-spacing:.15em; color:var(--amber); text-transform:uppercase;
+    letter-spacing:.15em; color:var(--amber); text-transform:uppercase; text-decoration:none;
   }
   .nav-logo span { color:var(--white); }
-  .nav-links { display:flex; gap:36px; list-style:none; }
+  .nav-links { display:flex; gap:36px; list-style:none; align-items:center; }
   .nav-links a {
     font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.2em;
     text-transform:uppercase; color:var(--off-white); text-decoration:none;
@@ -63,15 +64,16 @@
   }
   .nav-links a:hover { color:var(--amber); }
   .nav-links a:hover::after { width:100%; }
-  .nav-tag {
-    font-family:'IBM Plex Mono',monospace; font-size:10px;
-    color:var(--amber-dim); letter-spacing:.1em;
+  .nav-links a.nav-cv {
+    border:1px solid var(--amber); color:var(--amber); padding:7px 16px;
   }
+  .nav-links a.nav-cv::after { display:none; }
+  .nav-links a.nav-cv:hover { background:rgba(200,149,26,.12); }
 
   /* ── SHARED ── */
-  section { min-height:100vh; padding:100px 0 60px; position:relative; z-index:1; }
+  .view { position:relative; z-index:1; }
   .container { max-width:1200px; margin:0 auto; padding:0 48px; }
-  .section-header { margin-bottom:56px; }
+  .section-header { margin-bottom:40px; }
   .section-eyebrow {
     font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.3em;
     color:var(--amber); text-transform:uppercase;
@@ -85,15 +87,31 @@
   .section-title .hl { color:var(--amber); }
   .section-divider { width:60px; height:2px; background:var(--amber); margin-top:18px; }
   .section-sub-title {
-    font-family:'Oswald',sans-serif; font-size:19px; font-weight:600;
+    font-family:'Oswald',sans-serif; font-size:17px; font-weight:600;
     text-transform:uppercase; letter-spacing:.1em; color:var(--amber);
     margin-bottom:16px; display:flex; align-items:center; gap:10px;
   }
   .section-sub-title::before { content:''; width:20px; height:1px; background:var(--amber); }
 
-  /* ── HOME ── */
-  #home {
-    display:flex; align-items:center;
+  .btn-primary {
+    font-family:'Oswald',sans-serif; font-size:13px; letter-spacing:.2em;
+    text-transform:uppercase; padding:14px 32px; background:var(--amber);
+    color:var(--black); border:none; cursor:pointer; text-decoration:none;
+    display:inline-block; transition:all .2s; font-weight:600;
+    clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);
+  }
+  .btn-primary:hover { background:var(--amber-bright); transform:translateY(-2px); }
+  .btn-outline {
+    font-family:'Oswald',sans-serif; font-size:13px; letter-spacing:.2em;
+    text-transform:uppercase; padding:13px 32px; background:transparent;
+    color:var(--amber); border:1px solid var(--amber); cursor:pointer;
+    text-decoration:none; display:inline-block; transition:all .2s; font-weight:600;
+  }
+  .btn-outline:hover { background:rgba(200,149,26,.1); transform:translateY(-2px); }
+
+  /* ── HOME / HERO ── */
+  #hero {
+    min-height:100vh; padding:110px 0 60px; display:flex; align-items:center;
     background:
       radial-gradient(ellipse at 20% 50%,rgba(42,61,20,.4) 0%,transparent 60%),
       radial-gradient(ellipse at 80% 20%,rgba(200,149,26,.08) 0%,transparent 50%);
@@ -113,39 +131,20 @@
   .hero-title {
     font-family:'Oswald',sans-serif; font-size:20px; font-weight:300;
     letter-spacing:.25em; text-transform:uppercase; color:var(--off-white);
-    margin-bottom:36px; padding-left:4px;
+    margin-bottom:28px; padding-left:4px;
   }
   .hero-bio {
-    font-size:15px; line-height:1.8; color:var(--off-white); margin-bottom:48px;
+    font-size:15px; line-height:1.8; color:var(--off-white); margin-bottom:36px;
     max-width:480px; border-left:2px solid var(--amber-dim); padding-left:20px;
   }
-  .hero-stats { display:flex; gap:40px; margin-bottom:48px; }
-  .stat { text-align:center; }
-  .stat-num { font-family:'Oswald',sans-serif; font-size:36px; font-weight:700; color:var(--amber); line-height:1; }
+  .hero-stats { display:flex; gap:40px; margin-bottom:40px; }
+  .stat-num { font-family:'Oswald',sans-serif; font-size:34px; font-weight:700; color:var(--amber); line-height:1; }
   .stat-label {
     font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:.2em;
     color:var(--dim); text-transform:uppercase; margin-top:4px;
   }
   .hero-btns { display:flex; gap:16px; flex-wrap:wrap; }
-  .btn-primary {
-    font-family:'Oswald',sans-serif; font-size:13px; letter-spacing:.2em;
-    text-transform:uppercase; padding:14px 32px; background:var(--amber);
-    color:var(--black); border:none; cursor:pointer; text-decoration:none;
-    display:inline-block; transition:all .2s; font-weight:600;
-    clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);
-  }
-  .btn-primary:hover { background:var(--amber-bright); transform:translateY(-2px); }
-  .btn-outline {
-    font-family:'Oswald',sans-serif; font-size:13px; letter-spacing:.2em;
-    text-transform:uppercase; padding:13px 32px; background:transparent;
-    color:var(--amber); border:1px solid var(--amber); cursor:pointer;
-    text-decoration:none; display:inline-block; transition:all .2s; font-weight:600;
-  }
-  .btn-outline:hover { background:rgba(200,149,26,.1); transform:translateY(-2px); }
-  .hero-visual {
-    position:relative; background:var(--olive);
-    border:1px solid var(--border); overflow:hidden;
-  }
+  .hero-visual { position:relative; background:var(--olive); border:1px solid var(--border); overflow:hidden; }
   .hero-visual img { width:100%; height:400px; object-fit:cover; opacity:.85; display:block; }
   .hero-visual::before {
     content:''; position:absolute; inset:0;
@@ -163,14 +162,8 @@
   .corner-mark.tr { top:0; right:0; border-top:2px solid var(--amber); border-right:2px solid var(--amber); }
   .corner-mark.bl { bottom:0; left:0; border-bottom:2px solid var(--amber); border-left:2px solid var(--amber); }
   .corner-mark.br { bottom:0; right:0; border-bottom:2px solid var(--amber); border-right:2px solid var(--amber); }
-  .skills-strip {
-    margin-top:60px; padding:40px 0;
-    border-top:1px solid var(--border); border-bottom:1px solid var(--border);
-  }
-  .skills-label {
-    font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.3em;
-    color:var(--amber-dim); text-transform:uppercase; text-align:center; margin-bottom:24px;
-  }
+
+  .skills-strip { margin-top:56px; padding:28px 0; border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
   .skills-list { display:flex; flex-wrap:wrap; gap:12px; justify-content:center; }
   .skill-tag {
     font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.1em;
@@ -179,251 +172,120 @@
   }
   .skill-tag:hover { border-color:var(--amber); color:var(--amber); background:rgba(200,149,26,.08); }
 
-  /* ── PROJECTS ── */
-  #projects {
+  /* ── WORK GALLERY ── */
+  #work {
+    padding:90px 0 70px;
     background:radial-gradient(ellipse at 10% 80%,rgba(42,61,20,.25) 0%,transparent 50%);
   }
-  .project-card {
-    border:1px solid var(--border); background:rgba(14,16,9,.8);
-    overflow:hidden; margin-bottom:64px; position:relative;
+  .work-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:28px; }
+  .tile {
+    position:relative; display:block; aspect-ratio:4/3; overflow:hidden;
+    background:var(--olive); border:1px solid var(--border);
+    text-decoration:none; transition:border-color .25s, transform .25s, box-shadow .25s;
   }
-  .project-card::before {
-    content:''; position:absolute; top:0; left:0; right:0; height:2px;
+  .tile::before {
+    content:''; position:absolute; top:0; left:0; right:0; height:2px; z-index:3;
     background:linear-gradient(90deg,transparent,var(--amber),transparent);
   }
-  .project-header { display:grid; grid-template-columns:1fr 1fr; }
-  .project-header-img { position:relative; height:360px; overflow:hidden; }
-  .project-header-img img { width:100%; height:100%; object-fit:cover; transition:transform .5s; display:block; }
-  .project-card:hover .project-header-img img { transform:scale(1.03); }
-  .project-header-img::after {
-    content:''; position:absolute; inset:0;
-    background:linear-gradient(90deg,transparent 60%,rgba(14,16,9,.8) 100%);
+  .tile img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .6s; }
+  .tile::after {
+    content:''; position:absolute; inset:0; z-index:1;
+    background:linear-gradient(180deg,rgba(7,8,10,0) 35%,rgba(7,8,10,.92) 100%);
   }
-  .project-header-info {
-    padding:48px 48px 48px 40px; background:var(--olive);
-    display:flex; flex-direction:column; justify-content:center;
+  .tile:hover { border-color:var(--amber); transform:translateY(-4px); box-shadow:0 18px 40px rgba(0,0,0,.45); }
+  .tile:hover img { transform:scale(1.06); }
+  .tile-info { position:absolute; left:0; right:0; bottom:0; padding:24px 28px; z-index:2; }
+  .tile-cat {
+    font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.25em;
+    color:var(--amber); text-transform:uppercase; margin-bottom:8px;
   }
-  .project-number {
-    font-family:'Oswald',sans-serif; font-size:72px; font-weight:700;
-    color:rgba(200,149,26,.15); line-height:1; margin-bottom:8px;
+  .tile-title {
+    font-family:'Oswald',sans-serif; font-size:28px; font-weight:700;
+    text-transform:uppercase; letter-spacing:.03em; line-height:1.1; color:var(--white);
   }
-  .project-category {
-    font-family:'IBM Plex Mono',monospace; font-size:10px;
-    letter-spacing:.25em; color:var(--amber); text-transform:uppercase; margin-bottom:14px;
+  .tile-line { font-size:13px; color:var(--off-white); margin-top:6px; }
+  .tile-arrow {
+    position:absolute; top:18px; right:18px; z-index:3;
+    font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.2em; text-transform:uppercase;
+    color:var(--amber); background:rgba(7,8,10,.75); padding:6px 12px;
+    border:1px solid var(--border-bright); opacity:0; transform:translateY(-4px); transition:all .25s;
   }
-  .project-title {
-    font-family:'Oswald',sans-serif; font-size:32px; font-weight:700;
-    text-transform:uppercase; letter-spacing:.03em; line-height:1.1; color:var(--white); margin-bottom:8px;
+  .tile:hover .tile-arrow { opacity:1; transform:translateY(0); }
+
+  /* ── CREDENTIALS + CONTACT ── */
+  #credentials, #contact { padding:50px 0; }
+  .chip-row { display:flex; flex-wrap:wrap; gap:14px; }
+  .chip {
+    font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.15em; text-transform:uppercase;
+    padding:12px 20px; border:1px solid var(--border-bright); color:var(--off-white);
+    background:rgba(42,61,20,.3); text-decoration:none; transition:all .2s;
   }
-  .project-subtitle {
-    font-family:'Oswald',sans-serif; font-size:16px; font-weight:300;
-    color:var(--amber); letter-spacing:.1em; text-transform:uppercase; margin-bottom:20px;
+  .chip:hover { border-color:var(--amber); color:var(--amber); background:rgba(200,149,26,.08); }
+  .chip b { color:var(--amber); font-weight:600; }
+
+  /* ── PROJECT DETAIL ── */
+  .detail { padding:110px 0 60px; }
+  .back-link {
+    display:inline-flex; align-items:center; gap:10px; margin-bottom:32px;
+    font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.2em;
+    text-transform:uppercase; color:var(--amber); text-decoration:none; transition:gap .2s;
   }
-  .project-desc { font-size:14px; line-height:1.75; color:var(--off-white); margin-bottom:28px; }
-  .project-tags { display:flex; flex-wrap:wrap; gap:8px; }
-  .ptag {
-    font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.12em;
-    padding:5px 12px; border:1px solid var(--border-bright); color:var(--amber);
-    text-transform:uppercase; background:rgba(200,149,26,.05);
+  .back-link:hover { gap:16px; }
+  .detail-head { margin-bottom:36px; max-width:820px; }
+  .detail-cat {
+    font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.25em;
+    color:var(--amber); text-transform:uppercase; margin-bottom:14px;
   }
-  .project-body { padding:48px; border-top:1px solid var(--border); }
-  .project-body-grid { display:grid; grid-template-columns:1fr 1fr; gap:48px; margin-bottom:48px; }
+  .detail-title {
+    font-family:'Oswald',sans-serif; font-size:clamp(36px,5vw,60px); font-weight:700;
+    text-transform:uppercase; letter-spacing:.02em; line-height:1;
+  }
+  .detail-sub {
+    font-family:'Oswald',sans-serif; font-size:18px; font-weight:300;
+    color:var(--amber); letter-spacing:.1em; text-transform:uppercase; margin:10px 0 20px;
+  }
+  .detail-summary { font-size:15px; line-height:1.75; color:var(--off-white); border-left:2px solid var(--amber-dim); padding-left:20px; }
+  .badge {
+    display:inline-block; margin-top:22px;
+    font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.1em;
+    color:var(--amber); background:rgba(200,149,26,.1); border:1px solid var(--amber-dim);
+    padding:10px 18px;
+  }
+
+  .gallery { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:8px; margin-bottom:48px; }
+  .g-cell { position:relative; aspect-ratio:4/3; overflow:hidden; background:var(--olive); border:1px solid var(--border); }
+  .g-cell.wide { grid-column:span 2; aspect-ratio:auto; }
+  .g-cell img { width:100%; height:100%; object-fit:cover; display:block; cursor:zoom-in; transition:transform .4s; }
+  .g-cell img:hover { transform:scale(1.05); }
+  .g-cell video { width:100%; height:100%; object-fit:cover; display:block; background:#000; }
+  .g-label {
+    position:absolute; bottom:0; left:0; right:0; pointer-events:none;
+    font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:.15em;
+    color:var(--amber); background:rgba(7,8,10,.82); padding:5px 10px; text-transform:uppercase;
+  }
+  .g-cell video + .g-label { bottom:auto; top:0; }
+
+  .detail-cols { display:grid; grid-template-columns:3fr 2fr; gap:56px; margin-bottom:44px; }
   .role-list { list-style:none; display:flex; flex-direction:column; gap:12px; }
   .role-list li { font-size:14px; line-height:1.6; color:var(--off-white); padding-left:20px; position:relative; }
   .role-list li::before { content:'▸'; position:absolute; left:0; color:var(--amber); font-size:12px; }
-  .tech-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
-  .tech-item { background:rgba(42,61,20,.4); border:1px solid var(--border); padding:12px 16px; transition:all .2s; }
-  .tech-item:hover { border-color:var(--amber); }
-  .tech-name { font-family:'IBM Plex Mono',monospace; font-size:11px; font-weight:600; color:var(--amber); letter-spacing:.08em; margin-bottom:2px; }
-  .tech-desc { font-size:11px; color:var(--dim); line-height:1.4; }
-
-  /* ── MEDIA GRID ── */
-  .media-grid {
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    grid-template-rows:240px 240px;
-    gap:8px;
-    margin-bottom:48px;
+  .role-list strong { color:var(--white); }
+  .tags { display:flex; flex-wrap:wrap; gap:8px; }
+  .ptag {
+    font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.12em;
+    padding:6px 12px; border:1px solid var(--border-bright); color:var(--amber);
+    text-transform:uppercase; background:rgba(200,149,26,.05);
   }
-  .media-cell {
-    position:relative; overflow:hidden; background:var(--olive);
-    border:1px solid var(--border);
+  .detail-docs { display:flex; flex-wrap:wrap; gap:14px; margin-bottom:56px; }
+  .next-bar {
+    border-top:1px solid var(--border); padding-top:28px;
+    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;
   }
-  .media-cell.tall { grid-row:span 2; }
-  .media-cell img {
-    width:100%; height:100%; object-fit:cover;
-    transition:transform .4s; display:block; cursor:zoom-in;
+  .next-bar a {
+    font-family:'Oswald',sans-serif; font-size:16px; letter-spacing:.15em; text-transform:uppercase;
+    color:var(--off-white); text-decoration:none; transition:color .2s;
   }
-  .media-cell img:hover { transform:scale(1.05); }
-  .media-cell video { width:100%; height:100%; object-fit:cover; display:block; background:#000; }
-  .media-label {
-    position:absolute; bottom:0; left:0; right:0;
-    font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:.15em;
-    color:var(--amber); background:rgba(7,8,10,.82); padding:5px 10px;
-    text-transform:uppercase; z-index:2; pointer-events:none;
-  }
-  .play-overlay {
-    position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
-    background:rgba(0,0,0,.32); transition:background .2s; z-index:3; cursor:pointer;
-  }
-  .play-overlay:hover { background:rgba(0,0,0,.15); }
-  .play-btn {
-    width:52px; height:52px; border-radius:50%;
-    background:rgba(200,149,26,.9); border:2px solid var(--amber-bright);
-    display:flex; align-items:center; justify-content:center; transition:transform .2s;
-  }
-  .play-btn:hover { transform:scale(1.1); }
-  .play-btn svg { width:20px; height:20px; fill:var(--black); margin-left:3px; }
-
-  /* Regiment video full-width */
-  .video-full {
-    position:relative; background:#000; border:1px solid var(--border-bright);
-    overflow:hidden; margin-bottom:48px;
-  }
-  .video-full video { width:100%; max-height:480px; object-fit:cover; display:block; }
-  .video-full .play-overlay { position:absolute; inset:0; }
-  .video-full .play-btn { width:68px; height:68px; }
-  .video-full .play-btn svg { width:28px; height:28px; margin-left:4px; }
-  .video-full .media-label { position:absolute; }
-
-  /* Subsystems */
-  .subsystems { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-bottom:48px; }
-  .sub-card { background:var(--olive); border:1px solid var(--border); padding:28px; transition:all .25s; }
-  .sub-card:hover { border-color:var(--border-bright); transform:translateY(-3px); }
-  .sub-icon { font-size:24px; margin-bottom:14px; }
-  .sub-title { font-family:'Oswald',sans-serif; font-size:15px; font-weight:600; text-transform:uppercase; letter-spacing:.08em; color:var(--white); margin-bottom:8px; }
-  .sub-detail { font-size:12px; line-height:1.6; color:var(--dim); }
-
-  /* Phases */
-  .phases { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-bottom:48px; }
-  .phase { background:rgba(30,42,14,.4); border:1px solid var(--border); padding:28px; position:relative; }
-  .phase-num { font-family:'Oswald',sans-serif; font-size:48px; font-weight:700; color:rgba(200,149,26,.12); line-height:1; position:absolute; top:12px; right:16px; }
-  .phase-title { font-family:'Oswald',sans-serif; font-size:15px; font-weight:600; text-transform:uppercase; letter-spacing:.1em; color:var(--amber); margin-bottom:12px; }
-  .phase-items { list-style:none; display:flex; flex-direction:column; gap:6px; }
-  .phase-items li { font-size:12px; color:var(--off-white); padding-left:14px; position:relative; line-height:1.5; }
-  .phase-items li::before { content:'—'; position:absolute; left:0; color:var(--amber-dim); font-size:10px; }
-
-  /* LOA PDF */
-  .loa-pdf-section {
-    background:rgba(30,42,14,.4); border:1px solid var(--border-bright); overflow:hidden;
-    margin-bottom:8px;
-  }
-  .loa-pdf-header {
-    display:flex; align-items:center; justify-content:space-between;
-    padding:20px 32px; background:var(--olive); border-bottom:1px solid var(--border-bright);
-    flex-wrap:wrap; gap:16px;
-  }
-  .loa-pdf-title-row { display:flex; align-items:center; gap:20px; }
-  .loa-seal-mini {
-    width:52px; height:52px; border:2px solid var(--amber); border-radius:50%;
-    display:flex; flex-direction:column; align-items:center; justify-content:center;
-    background:rgba(200,149,26,.08); flex-shrink:0;
-  }
-  .loa-seal-mini-text { font-family:'Oswald',sans-serif; font-size:13px; font-weight:700; color:var(--amber); line-height:1; }
-  .loa-seal-mini-sub { font-family:'IBM Plex Mono',monospace; font-size:7px; color:var(--dim); }
-  .loa-pdf-title { font-family:'Oswald',sans-serif; font-size:20px; font-weight:700; text-transform:uppercase; letter-spacing:.05em; color:var(--white); }
-  .loa-pdf-from { font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--amber); letter-spacing:.12em; text-transform:uppercase; margin-top:3px; }
-  .loa-pdf-meta { font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--dim); letter-spacing:.15em; text-transform:uppercase; text-align:right; }
-  .loa-pdf-meta span { display:block; margin-bottom:3px; }
-  .loa-award-banner {
-    background:rgba(200,149,26,.1); border-top:1px solid var(--amber-dim);
-    padding:11px 32px; font-family:'IBM Plex Mono',monospace; font-size:11px;
-    color:var(--amber); letter-spacing:.08em; text-align:center;
-  }
-  .loa-pdf-viewer { width:100%; height:820px; border:none; display:block; background:#1a1a1a; }
-
-  .project-more {
-    text-align:center; padding:40px; border-top:1px solid var(--border);
-    font-family:'IBM Plex Mono',monospace; font-size:12px;
-    color:var(--dim); letter-spacing:.2em; text-transform:uppercase;
-  }
-
-  /* ── ACHIEVEMENTS ── */
-  #achievements {
-    background:radial-gradient(ellipse at 80% 50%,rgba(42,61,20,.3) 0%,transparent 60%);
-    min-height:50vh;
-  }
-  .coming-soon-box {
-    border:1px dashed var(--border-bright); padding:72px 40px;
-    text-align:center; background:rgba(30,42,14,.3);
-  }
-  .coming-soon-icon { font-size:48px; margin-bottom:20px; opacity:.6; }
-  .coming-soon-title {
-    font-family:'Oswald',sans-serif; font-size:28px; font-weight:700;
-    text-transform:uppercase; letter-spacing:.1em; color:var(--off-white); margin-bottom:10px;
-  }
-  .coming-soon-sub {
-    font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--dim);
-    letter-spacing:.2em; text-transform:uppercase;
-  }
-
-  /* ── CERTIFICATIONS ── */
-  #certifications {
-    background:radial-gradient(ellipse at 60% 30%,rgba(42,61,20,.25) 0%,transparent 55%);
-    min-height:auto; padding:80px 0;
-  }
-  .cert-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(340px,1fr)); gap:28px; }
-  .cert-card {
-    background:var(--olive); border:1px solid var(--border); overflow:hidden;
-    transition:all .25s; position:relative;
-  }
-  .cert-card::before {
-    content:''; position:absolute; top:0; left:0; right:0; height:2px;
-    background:linear-gradient(90deg,transparent,var(--amber),transparent);
-  }
-  .cert-card:hover { border-color:var(--border-bright); transform:translateY(-4px); box-shadow:0 16px 40px rgba(0,0,0,.4); }
-  .cert-card-top { padding:28px 28px 0; display:flex; align-items:flex-start; gap:16px; }
-  .cert-platform-badge {
-    flex-shrink:0; background:rgba(200,149,26,.15); border:1px solid var(--border-bright);
-    padding:6px 12px; font-family:'IBM Plex Mono',monospace; font-size:10px;
-    letter-spacing:.2em; color:var(--amber); text-transform:uppercase; white-space:nowrap;
-  }
-  .cert-title {
-    font-family:'Oswald',sans-serif; font-size:20px; font-weight:700;
-    text-transform:uppercase; letter-spacing:.03em; color:var(--white); line-height:1.15;
-  }
-  .cert-meta {
-    padding:12px 28px 0;
-    font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--dim);
-    letter-spacing:.12em; text-transform:uppercase;
-  }
-  .cert-desc { padding:14px 28px 0; font-size:13px; line-height:1.7; color:var(--off-white); }
-  .cert-topics {
-    padding:16px 28px 0; display:flex; flex-wrap:wrap; gap:6px;
-  }
-  .cert-topic {
-    font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:.1em;
-    padding:4px 10px; border:1px solid var(--border); color:var(--dim); text-transform:uppercase;
-    background:rgba(7,8,10,.4);
-  }
-  .cert-pdf-embed {
-    margin:20px 28px 0; border:1px solid var(--border); overflow:hidden;
-    background:#111; position:relative;
-  }
-  .cert-pdf-embed iframe {
-    width:100%; height:380px; border:none; display:block; background:#1a1a1a;
-  }
-  .cert-pdf-overlay-label {
-    position:absolute; top:8px; right:8px;
-    font-family:'IBM Plex Mono',monospace; font-size:8px; letter-spacing:.15em;
-    color:var(--amber); background:rgba(7,8,10,.8); padding:3px 8px; text-transform:uppercase;
-    pointer-events:none; z-index:2;
-  }
-  .cert-card-footer {
-    padding:20px 28px 28px; display:flex; align-items:center; justify-content:space-between;
-    margin-top:4px;
-  }
-  .cert-footer-label {
-    font-family:'IBM Plex Mono',monospace; font-size:9px; color:var(--dim);
-    letter-spacing:.15em; text-transform:uppercase;
-  }
-  .cert-view-btn {
-    font-family:'Oswald',sans-serif; font-size:12px; letter-spacing:.15em; font-weight:600;
-    text-transform:uppercase; padding:9px 22px; background:transparent;
-    color:var(--amber); border:1px solid var(--amber); text-decoration:none;
-    transition:all .2s; display:inline-block;
-  }
-  .cert-view-btn:hover { background:rgba(200,149,26,.12); }
+  .next-bar a:hover { color:var(--amber); }
 
   /* ── LIGHTBOX ── */
   .lightbox {
@@ -432,16 +294,10 @@
   }
   .lightbox.active { display:flex; }
   .lightbox img { max-width:90vw; max-height:88vh; object-fit:contain; border:1px solid var(--border-bright); }
-  .lightbox-close {
-    position:absolute; top:20px; right:28px;
-    font-family:'IBM Plex Mono',monospace; font-size:26px; color:var(--amber); cursor:pointer;
-  }
+  .lightbox-close { position:absolute; top:20px; right:28px; font-family:'IBM Plex Mono',monospace; font-size:26px; color:var(--amber); cursor:pointer; }
 
   /* ── FOOTER ── */
-  footer {
-    background:var(--olive); border-top:1px solid var(--border);
-    padding:40px; text-align:center; position:relative; z-index:1;
-  }
+  footer { background:var(--olive); border-top:1px solid var(--border); padding:40px; text-align:center; position:relative; z-index:1; }
   .footer-name { font-family:'Oswald',sans-serif; font-size:22px; font-weight:700; letter-spacing:.2em; color:var(--amber); text-transform:uppercase; margin-bottom:6px; }
   .footer-sub { font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.3em; color:var(--dim); text-transform:uppercase; }
 
@@ -455,23 +311,27 @@
   .hero-left > *:nth-child(5) { animation-delay:.5s; }
   .hero-left > *:nth-child(6) { animation-delay:.6s; }
   .hero-right { animation:fadeUp .8s ease .3s both; }
+  .detail.active { animation:fadeUp .5s ease both; }
+
+  /* ── VIEW SWITCHING ── */
+  .detail { display:none; }
+  .detail.active { display:block; }
+  body.in-detail #home-view { display:none; }
 
   /* ── RESPONSIVE ── */
   @media (max-width:900px) {
     nav { padding:0 20px; }
+    .nav-links { gap:16px; }
+    .nav-links li:nth-child(n+2):nth-child(-n+3) { display:none; }
     .container { padding:0 20px; }
-    .nav-tag { display:none; }
     .hero-grid { grid-template-columns:1fr; gap:40px; }
-    .project-header { grid-template-columns:1fr; }
-    .project-header-img { height:260px; }
-    .project-body-grid { grid-template-columns:1fr; }
-    .phases, .subsystems { grid-template-columns:1fr; }
-    .media-grid { grid-template-columns:1fr 1fr; grid-template-rows:auto; }
-    .media-cell.tall { grid-row:auto; }
-    .tech-grid { grid-template-columns:1fr; }
-    .loa-pdf-viewer { height:500px; }
-    .cert-grid { grid-template-columns:1fr; }
+    .hero-stats { gap:24px; }
+    .work-grid { grid-template-columns:1fr; }
+    .detail-cols { grid-template-columns:1fr; gap:36px; }
+    .g-cell.wide { grid-column:auto; }
+    .gallery { grid-template-columns:1fr 1fr; }
   }
+  @media (max-width:560px) { .gallery { grid-template-columns:1fr; } }
 </style>
 </head>
 <body>
@@ -484,792 +344,340 @@
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo">V.<span>Sharma</span></div>
+  <a href="#top" class="nav-logo">V.<span>Sharma</span></a>
   <ul class="nav-links">
-    <li><a href="#home">Home</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#pcbs">PCBs</a></li>
-    <li><a href="#achievements">Achievements</a></li>
-    <li><a href="#certifications">Certifications</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#credentials">Credentials</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="media/Vineet_Sharma_CV.pdf" target="_blank" class="nav-cv">Resume ↗</a></li>
   </ul>
-  <div class="nav-tag">// EMBEDDED SYSTEMS ENGINEER</div>
 </nav>
 
-<!-- ═══════════════════════ HOME ═══════════════════════ -->
-<section id="home">
-  <div class="container">
-    <div class="hero-grid">
-      <div class="hero-left">
-        <div class="hero-tag">Embedded Systems · FPGA/HDL · Robotics</div>
-        <h1 class="hero-name">Vineet<br><span class="highlight">Sharma</span></h1>
-        <div class="hero-title">Electronics Engineer</div>
-        <p class="hero-bio">
-          Embedded systems engineer building real hardware — from FPGA-based autonomous robots to
-          field-deployed defence UGVs. I work across digital hardware (Verilog/HDL), PCB design, and
-          motor control, with growing focus on FPGA implementation of intelligent, real-time systems.
-        </p>
-        <div class="hero-stats">
-          <div class="stat"><div class="stat-num">Top 30</div><div class="stat-label">National Innovation</div></div>
-          <div class="stat"><div class="stat-num">260+</div><div class="stat-label">Entries Outranked</div></div>
-          <div class="stat"><div class="stat-num">Army</div><div class="stat-label">Collaboration</div></div>
-        </div>
-        <div class="hero-btns">
-          <a href="#projects" class="btn-primary">View Projects</a>
-          <a href="#certifications" class="btn-outline">Certifications</a>
-        </div>
-      </div>
-      <div class="hero-right">
-        <div class="hero-visual">
-          <div class="corner-mark tl"></div><div class="corner-mark tr"></div>
-          <div class="corner-mark bl"></div><div class="corner-mark br"></div>
-          <img src="media/team.jpg" alt="Tech Hub Team — 19 Engineer Regiment">
-          <div class="hero-visual-label">// UGV Team — 19 Engineer Regiment, Indian Army</div>
-        </div>
-      </div>
-    </div>
-    <div class="skills-strip">
-      <div class="skills-label">// Core Competencies</div>
-      <div class="skills-list">
-        <span class="skill-tag">FPGA / Verilog HDL</span>
-        <span class="skill-tag">Digital Hardware Design</span>
-        <span class="skill-tag">Teensy 4.1</span>
-        <span class="skill-tag">Arduino / ESP32</span>
-        <span class="skill-tag">BLDC Motor Control</span>
-        <span class="skill-tag">PCB Design (Altium)</span>
-        <span class="skill-tag">RF Telemetry</span>
-        <span class="skill-tag">I2C / SPI / UART</span>
-        <span class="skill-tag">Power Electronics</span>
-        <span class="skill-tag">Embedded C/C++</span>
-        <span class="skill-tag">Parallel Processing</span>
-        <span class="skill-tag">Real-Time Sensor Systems</span>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- ═══════════════════════ HOME VIEW ═══════════════════════ -->
+<div id="home-view" class="view">
 
-<!-- ═══════════════════════ PROJECTS ═══════════════════════ -->
-<section id="projects">
-  <div class="container">
-    <div class="section-header">
-      <div class="section-eyebrow">Engineering Work</div>
-      <h2 class="section-title">Project <span class="hl">Portfolio</span></h2>
-      <div class="section-divider"></div>
-    </div>
-
-    <!-- PROJECT 01 — UGV -->
-    <div class="project-card">
-      <div class="project-header">
-        <div class="project-header-img">
-          <img src="media/ugv2.jpg" alt="UGV IN-QRMLS">
-        </div>
-        <div class="project-header-info">
-          <div class="project-number">01</div>
-          <div class="project-category">// Unmanned Ground Vehicle · Defence Robotics</div>
-          <div class="project-title">UGV A/T</div>
-          <div class="project-subtitle">Anti-Tank Mine Laying System</div>
-          <p class="project-desc">
-            Semi-autonomous UGV built with the 19 Engineer Regiment, Indian Army, for automated ground
-            excavation, precision mine placement, and camouflage — keeping soldiers out of high-threat
-            environments. Field-tested in sub-zero, high-altitude conditions.
+  <!-- HERO -->
+  <section id="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-left">
+          <div class="hero-tag">Embedded Systems · FPGA/HDL · Robotics</div>
+          <h1 class="hero-name">Vineet<br><span class="highlight">Sharma</span></h1>
+          <div class="hero-title">Electronics Engineer</div>
+          <p class="hero-bio">
+            I build real hardware — from field-deployed defence UGVs to FPGA-based autonomous robots and custom PCBs.
           </p>
-          <div class="project-tags">
-            <span class="ptag">Teensy 4.1</span>
-            <span class="ptag">BLDC Hub Motors</span>
-            <span class="ptag">433 MHz Telemetry</span>
-            <span class="ptag">Skid-Steer Drive</span>
-            <span class="ptag">Stepper Control</span>
-            <span class="ptag">LiFePO4 Battery</span>
+          <div class="hero-stats">
+            <div class="stat"><div class="stat-num">Top 30</div><div class="stat-label">Inno Yodha · Indian Army</div></div>
+            <div class="stat"><div class="stat-num">Top 50</div><div class="stat-label">eYRC · IIT Bombay</div></div>
+            <div class="stat"><div class="stat-num">AIR 5</div><div class="stat-label">DD Robocon 2026</div></div>
+          </div>
+          <div class="hero-btns">
+            <a href="#work" class="btn-primary">View Work</a>
+            <a href="media/Vineet_Sharma_CV.pdf" target="_blank" class="btn-outline">Resume ↗</a>
+          </div>
+        </div>
+        <div class="hero-right">
+          <div class="hero-visual">
+            <div class="corner-mark tl"></div><div class="corner-mark tr"></div>
+            <div class="corner-mark bl"></div><div class="corner-mark br"></div>
+            <img src="media/team.jpg" alt="Tech Hub Team — 19 Engineer Regiment">
+            <div class="hero-visual-label">// UGV Team — 19 Engineer Regiment, Indian Army</div>
           </div>
         </div>
       </div>
-
-      <div class="project-body">
-
-        <!-- ── MEDIA GRID ── -->
-        <div class="section-sub-title" style="margin-bottom:18px;">// Field Documentation &amp; Videos</div>
-        <div class="media-grid">
-
-          <!-- Col 1 tall: UGV side photo -->
-          <div class="media-cell tall">
-            <img src="media/ugv1.jpg" alt="UGV NINETEEN Side View"
-                 onclick="openLightbox(this.src)">
-            <div class="media-label">IN-QRMLS · NINETEEN — Side View</div>
-          </div>
-
-          <!-- Col 2 row 1: 360 video -->
-          <div class="media-cell">
-            <video id="v1" src="media/360 Deg Rotation.mp4"
-                   playsinline preload="metadata"></video>
-            <div class="play-overlay" id="po1" onclick="playVid('v1','po1')">
-              <div class="play-btn">
-                <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
-              </div>
-            </div>
-            <div class="media-label">360° Rotation Demo</div>
-          </div>
-
-          <!-- Col 3 row 1: CAD 3D -->
-          <div class="media-cell">
-            <img src="media/cad3d.jpg" alt="CAD 3D Assembly"
-                 onclick="openLightbox(this.src)">
-            <div class="media-label">CAD · Full 3D Assembly</div>
-          </div>
-
-          <!-- Col 2 row 2: Drive video -->
-          <div class="media-cell">
-            <video id="v2" src="media/Drive.mp4"
-                   playsinline preload="metadata"></video>
-            <div class="play-overlay" id="po2" onclick="playVid('v2','po2')">
-              <div class="play-btn">
-                <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
-              </div>
-            </div>
-            <div class="media-label">Drive Test — Field Run</div>
-          </div>
-
-          <!-- Col 3 row 2: Team photo -->
-          <div class="media-cell">
-            <img src="media/team.jpg" alt="Team with 19 Engineer Regiment"
-                 onclick="openLightbox(this.src)">
-            <div class="media-label">Team · 19 Engineer Regiment</div>
-          </div>
-
-        </div><!-- end media-grid -->
-
-        <!-- ── My Role + Tech Stack ── -->
-        <div class="project-body-grid">
-          <div>
-            <div class="section-sub-title">// My Role — Embedded Systems Lead</div>
-            <ul class="role-list">
-              <li>Designed the full <strong>control system architecture</strong> around Teensy 4.1 (ARM Cortex-M7, 600 MHz) and custom interface board</li>
-              <li>Built the <strong>BLDC hub motor drive system</strong> — 4-wheel skid-steer with per-wheel ESC control</li>
-              <li>Integrated <strong>dual 433 MHz telemetry</strong> for 300–500 m wireless command/data link</li>
-              <li>Programmed <strong>dual Nema 34 steppers</strong> (TB6600 drivers) for precision auger positioning</li>
-              <li>Set up <strong>5.8 GHz FPV video transmission</strong> for live front + mine-drop feeds</li>
-              <li>Designed &amp; fabricated <strong>interface/power PCBs in-house</strong>, including buck converters</li>
-              <li>Managed <strong>13S LiFePO4 power system</strong> (100–120 min runtime) and led field testing at the army unit</li>
-            </ul>
-          </div>
-          <div>
-            <div class="section-sub-title">// Electronics Stack</div>
-            <div class="tech-grid">
-              <div class="tech-item"><div class="tech-name">Teensy 4.1</div><div class="tech-desc">ARM Cortex-M7 @ 600 MHz · Central MCU</div></div>
-              <div class="tech-item"><div class="tech-name">Atpole BLDC Hub</div><div class="tech-desc">48–60 V · 900 W · 60 Nm</div></div>
-              <div class="tech-item"><div class="tech-name">Holybro Telemetry</div><div class="tech-desc">433 MHz · 300–500 m range</div></div>
-              <div class="tech-item"><div class="tech-name">Nema 34 + TB6600</div><div class="tech-desc">4 A peak · 1/32 microstep</div></div>
-              <div class="tech-item"><div class="tech-name">Cytron MDD20A</div><div class="tech-desc">Dual-ch · 20 A cont / 60 A peak</div></div>
-              <div class="tech-item"><div class="tech-name">SpeedyBee TX800</div><div class="tech-desc">5.8 GHz video TX · FPV feed</div></div>
-              <div class="tech-item"><div class="tech-name">LiFePO4 Battery</div><div class="tech-desc">13S · 20 Ah · ~110 min runtime</div></div>
-              <div class="tech-item"><div class="tech-name">Buck Converters</div><div class="tech-desc">Fixed + variable, in-house PCB</div></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- ── Subsystems ── -->
-        <div class="section-sub-title">// Electronic Subsystems</div>
-        <div class="subsystems">
-          <div class="sub-card"><div class="sub-icon">🚗</div><div class="sub-title">Drive Control</div><div class="sub-detail">4× BLDC hub motors, skid-steer. Independent ESC per wheel for tank-style pivot at 20–30 km/h.</div></div>
-          <div class="sub-card"><div class="sub-icon">📡</div><div class="sub-title">Telemetry &amp; Comms</div><div class="sub-detail">Dual 433 MHz link to operator laptop, handling drive + mechanism commands.</div></div>
-          <div class="sub-card"><div class="sub-icon">⚙️</div><div class="sub-title">Mechanism Control</div><div class="sub-detail">Planetary DC motors for mine/mud-drop; Nema 34 steppers for precision auger positioning.</div></div>
-          <div class="sub-card"><div class="sub-icon">📹</div><div class="sub-title">Video Transmission</div><div class="sub-detail">5.8 GHz on-board TX, dual-antenna receiver, dual RunCam cameras.</div></div>
-          <div class="sub-card"><div class="sub-icon">⚡</div><div class="sub-title">Power Distribution</div><div class="sub-detail">13S LiFePO4 main bus with fixed and variable bucks for actuators and logic.</div></div>
-          <div class="sub-card"><div class="sub-icon">🖥️</div><div class="sub-title">Interface Board</div><div class="sub-detail">Custom in-house PCB — Teensy 4.1, ESC channels, stepper headers, telemetry UART.</div></div>
-        </div>
-
-        <!-- ── Development Phases ── -->
-        <div class="section-sub-title">// Development Phases</div>
-        <div class="phases">
-          <div class="phase">
-            <div class="phase-num">01</div>
-            <div class="phase-title">Design</div>
-            <ul class="phase-items">
-              <li>CAD, drive &amp; mechanisms</li>
-              <li>Control system architecture</li>
-              <li>Interface/power PCB design</li>
-            </ul>
-          </div>
-          <div class="phase">
-            <div class="phase-num">02</div>
-            <div class="phase-title">Fab &amp; Test</div>
-            <ul class="phase-items">
-              <li>In-house PCB manufacturing</li>
-              <li>Control systems validation</li>
-              <li>Power optimisation</li>
-            </ul>
-          </div>
-          <div class="phase">
-            <div class="phase-num">03</div>
-            <div class="phase-title">Field Deployment</div>
-            <ul class="phase-items">
-              <li>Army unit field testing</li>
-              <li>Sub-zero, high-altitude validation</li>
-              <li>Top 30 — Inno Yodha 2025–26</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- ── LOA PDF ── -->
-        <div class="section-sub-title">// Letter of Appreciation — Indian Army</div>
-        <div class="loa-pdf-section">
-          <div class="loa-pdf-header">
-            <div class="loa-pdf-title-row">
-              <div class="loa-seal-mini">
-                <div class="loa-seal-mini-text">XIX</div>
-                <div class="loa-seal-mini-sub">ENGR</div>
-              </div>
-              <div>
-                <div class="loa-pdf-title">Letter of Appreciation</div>
-                <div class="loa-pdf-from">Col Rakesh Khatkar · CO, 19 Engineer Regiment · Indian Army · Madras Sappers</div>
-              </div>
-            </div>
-            <div class="loa-pdf-meta">
-              <span>Ref: 1241/DO/284/A</span>
-              <span>March 2026</span>
-              <span>PIN – 914019 · c/o 56 APO</span>
-            </div>
-          </div>
-          <div class="loa-award-banner">
-            ★ &nbsp; UGV System selected among <strong>Top 30 of 260+ entries</strong> — Northern Command Inno Yodha Competition 2025–26 &nbsp; ★
-          </div>
-          <iframe
-            class="loa-pdf-viewer"
-            src="media/LOA.pdf"
-            title="Letter of Appreciation – Col Rakesh Khatkar, 19 Engineer Regiment">
-          </iframe>
-        </div>
-
-      </div><!-- end project-body -->
-    </div><!-- end project-card ugv -->
-
-
-    <!-- ═══════════════════════════════════════════════════════════ -->
-    <!-- PROJECT 02 — eYRC MazeSolver Bot (moved up — FPGA/Verilog priority for this audience) -->
-    <!-- ═══════════════════════════════════════════════════════════ -->
-    <div class="project-card">
-      <div class="project-header">
-        <div class="project-header-img">
-          <img src="media/eyrc/bot-eyrc.jpeg" alt="eYRC MazeSolver Bot in Arena">
-        </div>
-        <div class="project-header-info">
-          <div class="project-number">02</div>
-          <div class="project-category">// FPGA Robotics · Autonomous Navigation · IIT Bombay</div>
-          <div class="project-title">MazeSolver Bot</div>
-          <div class="project-subtitle">e-Yantra Robotics Competition 2025–26</div>
-          <p class="project-desc">
-            FPGA-powered autonomous robot for eYRC 2025–26 (IIT Bombay, Ministry of Education). Runs on
-            a De0-Nano (Altera Cyclone IV), navigating dynamic mazes in real time while sensing
-            temperature, humidity, and soil moisture at arena waypoints — all via parallel hardware logic.
-          </p>
-          <div class="project-tags">
-            <span class="ptag">FPGA / Verilog HDL</span>
-            <span class="ptag">De0-Nano · Cyclone IV</span>
-            <span class="ptag">Custom CPU Core</span>
-            <span class="ptag">Parallel Processing</span>
-            <span class="ptag">ModelSim Verification</span>
-            <span class="ptag">Real-Time Sensor Fusion</span>
-          </div>
+      <div class="skills-strip">
+        <div class="skills-list">
+          <span class="skill-tag">FPGA / Verilog HDL</span>
+          <span class="skill-tag">Embedded C/C++</span>
+          <span class="skill-tag">PCB Design (Altium)</span>
+          <span class="skill-tag">BLDC / FOC Motor Control</span>
+          <span class="skill-tag">Teensy · Arduino · ESP32</span>
+          <span class="skill-tag">I2C / SPI / UART</span>
+          <span class="skill-tag">RF Telemetry</span>
+          <span class="skill-tag">Power Electronics</span>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="project-body">
-
-        <!-- ── MEDIA GRID ── -->
-        <div class="section-sub-title" style="margin-bottom:18px;">// Build Documentation &amp; Arena Media</div>
-        <div class="media-grid">
-
-          <!-- Col 1 tall: bot in eYRC arena -->
-          <div class="media-cell tall">
-            <img src="media/eyrc/bot-eyrc.jpeg" alt="MazeSolver Bot navigating eYRC 25-26 arena"
-                 onclick="openLightbox(this.src)">
-            <div class="media-label">MazeSolver Bot · eYRC 25–26 Arena</div>
-          </div>
-
-          <!-- Col 2 row 1: robot close-up with sensors -->
-          <div class="media-cell">
-            <img src="media/eyrc/robotickit-eyrc.jpeg" alt="MazeSolver Bot sensor assembly close-up"
-                 onclick="openLightbox(this.src)">
-            <div class="media-label">Robot — Sensor &amp; Electronics Assembly</div>
-          </div>
-
-          <!-- Col 3 row 1: ModelSim simulation screenshot -->
-          <div class="media-cell">
-            <img src="media/eyrc/simulation.jpeg" alt="ModelSim Intel FPGA Simulation — DHT11 Verilog"
-                 onclick="openLightbox(this.src)">
-            <div class="media-label">ModelSim · DHT11 Verilog Simulation</div>
-          </div>
-
-          <!-- Col 2 row 2: e-Yantra kit unboxing -->
-          <div class="media-cell">
-            <img src="media/eyrc/eyantra_frontv.jpeg" alt="e-Yantra hardware kit from IIT Bombay"
-                 onclick="openLightbox(this.src)">
-            <div class="media-label">e-Yantra Kit · De0-Nano + Components · IIT Bombay</div>
-          </div>
-
-          <!-- Col 3 row 2: team photo -->
-          <div class="media-cell">
-            <img src="media/eyrc/team-eyrc.jpeg" alt="MazeSolver Bot team — eYRC 2025-26"
-                 onclick="openLightbox(this.src)">
-            <div class="media-label">Team — MazeSolver Bot · eYRC 25–26</div>
-          </div>
-
-        </div><!-- end media-grid -->
-
-        <!-- ── My Role + Tech Stack ── -->
-        <div class="project-body-grid">
-          <div>
-            <div class="section-sub-title">// My Role — FPGA Systems &amp; Firmware</div>
-            <ul class="role-list">
-              <li>Designed a <strong>custom CPU architecture on FPGA fabric</strong> in Verilog HDL (De0-Nano, Altera Cyclone IV)</li>
-              <li>Wrote a <strong>DHT11 sensor driver in Verilog</strong> (1-wire protocol), verified end-to-end in ModelSim</li>
-              <li>Built a <strong>parallel processing architecture</strong> — concurrent sensor acquisition, motor FSM, maze logic, and UART, all as hardware logic with no CPU bottleneck</li>
-              <li>Developed a <strong>real-time maze-solving FSM</strong> for dynamic, reconfigurable arena navigation</li>
-              <li>Designed <strong>HC-SR04 ultrasonic drivers</strong> in Verilog for multi-directional obstacle detection</li>
-              <li>Implemented a <strong>custom UART module</strong> in Verilog for wireless sensor-data transmission</li>
-              <li>Ranked <strong>Top 50 nationally</strong>, competing through simulation, hardware build, and arena rounds — Level 3 Certificate, IIT Bombay</li>
-            </ul>
-          </div>
-          <div>
-            <div class="section-sub-title">// Technology Stack</div>
-            <div class="tech-grid">
-              <div class="tech-item"><div class="tech-name">De0-Nano FPGA</div><div class="tech-desc">Altera Cyclone IV EP4CE22F17C6 · 22K LEs</div></div>
-              <div class="tech-item"><div class="tech-name">Verilog HDL</div><div class="tech-desc">Custom CPU · sensor drivers · motor FSM · UART</div></div>
-              <div class="tech-item"><div class="tech-name">DHT11 Sensor</div><div class="tech-desc">1-wire protocol · Verilog peripheral driver</div></div>
-              <div class="tech-item"><div class="tech-name">HC-SR04 Ultrasonic</div><div class="tech-desc">Verilog trigger/echo driver</div></div>
-              <div class="tech-item"><div class="tech-name">ModelSim 2020.1</div><div class="tech-desc">HDL simulation &amp; waveform verification</div></div>
-              <div class="tech-item"><div class="tech-name">Parallel Processing</div><div class="tech-desc">Concurrent modules on FPGA fabric</div></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- ── Subsystems ── -->
-        <div class="section-sub-title">// FPGA Subsystems</div>
-        <div class="subsystems">
-          <div class="sub-card">
-            <div class="sub-icon">🧠</div>
-            <div class="sub-title">Custom CPU Core</div>
-            <div class="sub-detail">Purpose-built processor in Verilog on Cyclone IV — instruction decode plus concurrent sensor/motor control as hardware logic.</div>
-          </div>
-          <div class="sub-card">
-            <div class="sub-icon">🌡️</div>
-            <div class="sub-title">Environmental Sensing</div>
-            <div class="sub-detail">DHT11 1-wire driver + capacitive soil moisture sensing, packetized and sent at arena waypoints.</div>
-          </div>
-          <div class="sub-card">
-            <div class="sub-icon">🗺️</div>
-            <div class="sub-title">Maze Navigation</div>
-            <div class="sub-detail">HC-SR04 ultrasonic array + Verilog FSM for real-time adaptive navigation of reconfigured layouts.</div>
-          </div>
-          <div class="sub-card">
-            <div class="sub-icon">⚙️</div>
-            <div class="sub-title">Motor Control</div>
-            <div class="sub-detail">Differential DC drive with PWM generated directly from FPGA GPIO for precise wall-following.</div>
-          </div>
-          <div class="sub-card">
-            <div class="sub-icon">🔄</div>
-            <div class="sub-title">Parallel Processing</div>
-            <div class="sub-detail">Sensing, navigation, motor control, and UART run fully in parallel — true hardware concurrency over MCU-based designs.</div>
-          </div>
-          <div class="sub-card">
-            <div class="sub-icon">📶</div>
-            <div class="sub-title">Serial Communication</div>
-            <div class="sub-detail">Custom Verilog UART TX/RX, ModelSim-verified before hardware deployment.</div>
-          </div>
-        </div>
-
-        <!-- ── Competition Phases ── -->
-        <div class="section-sub-title">// Competition Phases</div>
-        <div class="phases">
-          <div class="phase">
-            <div class="phase-num">01</div>
-            <div class="phase-title">Qualification</div>
-            <ul class="phase-items">
-              <li>FPGA architecture planning</li>
-              <li>DHT11 &amp; UART — ModelSim verified</li>
-              <li>Top 50 nationally · kit awarded</li>
-            </ul>
-          </div>
-          <div class="phase">
-            <div class="phase-num">02</div>
-            <div class="phase-title">Hardware Build</div>
-            <ul class="phase-items">
-              <li>De0-Nano setup, chassis assembly</li>
-              <li>Sensor integration &amp; wiring</li>
-              <li>Parallel subsystem integration</li>
-            </ul>
-          </div>
-          <div class="phase">
-            <div class="phase-num">03</div>
-            <div class="phase-title">Arena Competition</div>
-            <ul class="phase-items">
-              <li>Live maze navigation runs</li>
-              <li>Dynamic wall reconfiguration handled</li>
-              <li>Level 3 Certificate · IIT Bombay</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- ── eYRC Certificate PDF ── -->
-        <div class="section-sub-title">// e-Yantra Certificate — IIT Bombay</div>
-        <div class="loa-pdf-section">
-          <div class="loa-pdf-header">
-            <div class="loa-pdf-title-row">
-              <div class="loa-seal-mini">
-                <div class="loa-seal-mini-text" style="font-size:9px;letter-spacing:.05em;">eYRC</div>
-                <div class="loa-seal-mini-sub">IIT-B</div>
-              </div>
-              <div>
-                <div class="loa-pdf-title">Certificate of Participation</div>
-                <div class="loa-pdf-from">Prof. Shivaram Kalyanakrishnan · Principal Investigator, e-Yantra · IIT Bombay · ERTS Lab, CSE Dept</div>
-              </div>
-            </div>
-            <div class="loa-pdf-meta">
-              <span>EYRC2025-261775731095</span>
-              <span>eYRC 2025–26</span>
-              <span>MazeSolver Bot Theme</span>
-            </div>
-          </div>
-          <div class="loa-award-banner">
-            ★ &nbsp; Team MB-1737–2416 · <strong>Top 50 nationally</strong> — e-Yantra Robotics Competition 2025–26 · IIT Bombay · Sponsored by MoE, Govt. of India &nbsp; ★
-          </div>
-          <iframe
-            class="loa-pdf-viewer"
-            src="media/eyrc/eyrc_2026-MB_1737-2416-vineet-sharma.pdf"
-            title="e-Yantra Certificate of Participation — Vineet Sharma · eYRC 2025-26">
-          </iframe>
-        </div>
-
-      </div><!-- end project-body -->
-    </div><!-- end project-card eyrc -->
-
-    <!-- ═══════════════════════════════════════════════════════════ -->
-    <!-- PROJECT 03 — DD Robocon 2025 Basketball Bots               -->
-    <!-- ═══════════════════════════════════════════════════════════ -->
-    <div class="project-card">
-      <div class="project-header">
-        <div class="project-header-img">
-          <img src="media/DD1.jpeg" alt="DD Robocon 2025 Basketball Bots at IIT Delhi">
-        </div>
-        <div class="project-header-info">
-          <div class="project-number">03</div>
-          <div class="project-category">// Robotics Competition · Embedded Systems · Motor Control</div>
-          <div class="project-title">DD Robocon 2025 Basketball Bots</div>
-          <div class="project-subtitle">National Robotics Championship · IIT Delhi</div>
-          <p class="project-desc">
-            Competitive robot-basketball system for DD Robocon 2025 (ABU Robocon format) at IIT Delhi —
-            two robots per team dribbling, passing, shooting, and defending under a 20-second shot clock.
-            Focused on the electronics/embedded side: custom PCB and FOC-based BLDC motor control.
-          </p>
-          <div class="project-tags">
-            <span class="ptag">Teensy MCU</span>
-            <span class="ptag">VESC ESC</span>
-            <span class="ptag">FOC</span>
-            <span class="ptag">BLDC Motors</span>
-            <span class="ptag">Embedded C/C++</span>
-            <span class="ptag">PCB Design</span>
-          </div>
-        </div>
+  <!-- WORK GALLERY -->
+  <section id="work">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">Selected Work</div>
+        <h2 class="section-title">Project <span class="hl">Portfolio</span></h2>
+        <div class="section-divider"></div>
       </div>
+      <div class="work-grid">
 
-      <div class="project-body">
-
-        <!-- ── MEDIA GRID ── -->
-        <div class="section-sub-title" style="margin-bottom:18px;">// Competition Documentation &amp; Build Media</div>
-        <div class="media-grid">
-
-          <!-- Col 1 tall: robot + team member -->
-          <div class="media-cell tall">
-            <img src="media/DD2.jpeg" alt="DD Robocon 2025 basketball bot at IIT Delhi"
-                 onclick="openLightbox(this.src)">
-            <div class="media-label">Basketball Bot · DD Robocon 2025</div>
+        <a class="tile" href="#ugv">
+          <img src="media/ugv2.jpg" alt="UGV A/T">
+          <div class="tile-arrow">View →</div>
+          <div class="tile-info">
+            <div class="tile-cat">Defence Robotics · Indian Army</div>
+            <div class="tile-title">UGV A/T</div>
+            <div class="tile-line">Anti-tank mine laying robot · Top 30 of 260+</div>
           </div>
+        </a>
 
-          <!-- Col 2 row 1 -->
-          <div class="media-cell">
-            <img src="media/DD3.jpeg" alt="DD Robocon 2025 robot at IIT Delhi"
-                 onclick="openLightbox(this.src)">
-            <div class="media-label">Robot System · IIT Delhi</div>
+        <a class="tile" href="#eyrc">
+          <img src="media/eyrc/bot-eyrc.jpeg" alt="MazeSolver Bot">
+          <div class="tile-arrow">View →</div>
+          <div class="tile-info">
+            <div class="tile-cat">FPGA Robotics · IIT Bombay</div>
+            <div class="tile-title">MazeSolver Bot</div>
+            <div class="tile-line">Custom CPU in Verilog on Cyclone IV · Top 50 nationally</div>
           </div>
+        </a>
 
-          <!-- Col 3 row 1 -->
-          <div class="media-cell">
-            <img src="media/DD4.jpeg" alt="DD Robocon 2025 team photo"
-                 onclick="openLightbox(this.src)">
-            <div class="media-label">Team · DD Robocon 2025</div>
+        <a class="tile" href="#robocon">
+          <img src="media/DD1.jpeg" alt="DD Robocon 2025 Basketball Bots">
+          <div class="tile-arrow">View →</div>
+          <div class="tile-info">
+            <div class="tile-cat">Robotics Competition · IIT Delhi</div>
+            <div class="tile-title">DD Robocon 2025</div>
+            <div class="tile-line">FOC-based BLDC control for basketball robots</div>
           </div>
+        </a>
 
-          <!-- Col 2 row 2 -->
-          <div class="media-cell">
-            <img src="media/DD5.jpeg" alt="Custom electronics PCB for robotics system"
-                 onclick="openLightbox(this.src)">
-            <div class="media-label">Custom Electronics · PCB Design</div>
+        <a class="tile" href="#pcb">
+          <img src="media/PCB3.jpeg" alt="Actuator + Interface Board">
+          <div class="tile-arrow">View →</div>
+          <div class="tile-info">
+            <div class="tile-cat">PCB Design · DD Robocon 2026</div>
+            <div class="tile-title">Actuator + Interface Board</div>
+            <div class="tile-line">4-layer modular board · first-try bring-up · AIR 5</div>
           </div>
+        </a>
 
-          <!-- Col 3 row 2 -->
-          <div class="media-cell">
-            <img src="media/DD%20Certificate.jpeg" alt="DD Robocon 2025 Certificate of Participation"
-                 onclick="openLightbox(this.src)">
-            <div class="media-label">Certificate · DD Robocon 2025</div>
-          </div>
+      </div>
+    </div>
+  </section>
 
-        </div><!-- end media-grid -->
+  <!-- CREDENTIALS -->
+  <section id="credentials">
+    <div class="container">
+      <div class="section-header" style="margin-bottom:24px;">
+        <div class="section-eyebrow">Proof</div>
+        <h2 class="section-title">Creden<span class="hl">tials</span></h2>
+        <div class="section-divider"></div>
+      </div>
+      <div class="chip-row">
+        <a class="chip" href="media/LOA.pdf" target="_blank"><b>Letter of Appreciation</b> · 19 Engineer Regiment ↗</a>
+        <a class="chip" href="media/eyrc/eyrc_2026-MB_1737-2416-vineet-sharma.pdf" target="_blank"><b>eYRC Certificate</b> · IIT Bombay ↗</a>
+        <a class="chip" href="media/DD%20Certificate.jpeg" target="_blank"><b>DD Robocon 2025</b> · Certificate ↗</a>
+        <a class="chip" href="media/QuantitativeAptitude.pdf" target="_blank"><b>Quantitative Aptitude</b> · Udemy ↗</a>
+      </div>
+    </div>
+  </section>
 
-        <!-- ── Competition Video ── -->
-        <div class="section-sub-title" style="margin-bottom:18px;">// Robot Demonstration</div>
-        <div class="video-full">
-          <video id="ddVideo" src="media/DDVideo.mp4" playsinline preload="metadata"></video>
-          <div class="play-overlay" id="ddVideoOverlay" onclick="playVid('ddVideo','ddVideoOverlay')">
-            <div class="play-btn">
-              <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
-            </div>
-          </div>
-          <div class="media-label">DD Robocon 2025 · Basketball Bot Demonstration</div>
-        </div>
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-header" style="margin-bottom:24px;">
+        <div class="section-eyebrow">Get In Touch</div>
+        <h2 class="section-title">Con<span class="hl">tact</span></h2>
+        <div class="section-divider"></div>
+      </div>
+      <div class="chip-row">
+        <!-- EDIT: replace the three links below with your real details -->
+        <a class="chip" href="mailto:your-email@example.com"><b>Email</b> · your-email@example.com</a>
+        <a class="chip" href="https://www.linkedin.com/in/your-profile" target="_blank"><b>LinkedIn</b> ↗</a>
+        <a class="chip" href="https://github.com/your-username" target="_blank"><b>GitHub</b> ↗</a>
+        <a class="chip" href="media/Vineet_Sharma_CV.pdf" target="_blank"><b>Resume</b> · PDF ↗</a>
+      </div>
+    </div>
+  </section>
 
-        <!-- ── My Role + Tech Stack ── -->
-        <div class="project-body-grid">
-          <div>
-            <div class="section-sub-title">// My Role — Electronics &amp; Embedded Systems</div>
-            <ul class="role-list">
-              <li>Worked in the <strong>electronics/embedded team</strong>, focused on motor control and embedded integration</li>
-              <li>Used a <strong>Teensy MCU with VESC ESCs</strong> for precise BLDC motor control</li>
-              <li>Implemented <strong>Field-Oriented Control (FOC)</strong> for smooth, efficient motor response</li>
-              <li>Contributed to the <strong>custom PCB</strong> integrating controller, motor interfaces, and support electronics</li>
-              <li>Developed and debugged the <strong>embedded motor-control layer</strong> for repeated competition-floor reliability</li>
-            </ul>
-          </div>
+</div>
 
-          <div>
-            <div class="section-sub-title">// Technology Stack</div>
-            <div class="tech-grid">
-              <div class="tech-item"><div class="tech-name">Teensy</div><div class="tech-desc">Embedded motor-control platform</div></div>
-              <div class="tech-item"><div class="tech-name">VESC ESC</div><div class="tech-desc">High-performance BLDC drive control</div></div>
-              <div class="tech-item"><div class="tech-name">FOC</div><div class="tech-desc">Precise, efficient BLDC operation</div></div>
-              <div class="tech-item"><div class="tech-name">Embedded C/C++</div><div class="tech-desc">Firmware &amp; hardware interfacing</div></div>
-              <div class="tech-item"><div class="tech-name">Custom PCB</div><div class="tech-desc">Schematic/layout contribution</div></div>
-              <div class="tech-item"><div class="tech-name">System Integration</div><div class="tech-desc">Electronics ↔ competition robot</div></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- ── Competition Context ── -->
-        <div class="section-sub-title">// What Made the Challenge Interesting</div>
-        <div class="subsystems">
-          <div class="sub-card">
-            <div class="sub-icon">🏀</div>
-            <div class="sub-title">Robot Basketball</div>
-            <div class="sub-detail">Two robots per team moving, attacking, defending, and scoring under strict time constraints.</div>
-          </div>
-          <div class="sub-card">
-            <div class="sub-icon">⚡</div>
-            <div class="sub-title">Fast Motor Response</div>
-            <div class="sub-detail">FOC-based BLDC control gave precise, repeatable drive response for competitive play.</div>
-          </div>
-          <div class="sub-card">
-            <div class="sub-icon">🔧</div>
-            <div class="sub-title">Hardware Integration</div>
-            <div class="sub-detail">Controller, ESCs, motors and custom PCB working as one system under repeated testing.</div>
-          </div>
-          <div class="sub-card">
-            <div class="sub-icon">🏆</div>
-            <div class="sub-title">National Stage</div>
-            <div class="sub-detail">IIT Delhi, 40 student teams nationally — winner advances to ABU Robocon 2025, Mongolia.</div>
-          </div>
-        </div>
-
-        <div class="loa-pdf-section" style="margin-bottom:0;">
-          <div class="loa-award-banner">
-            ★ &nbsp; DD Robocon 2025 · <strong>Certificate of Participation</strong> — IIT Delhi · 12–13 July 2025 &nbsp; ★
-          </div>
-        </div>
-
-      </div><!-- end project-body -->
-      <div class="project-more">// More projects coming soon — check back for updates</div>
-    </div><!-- end project-card dd-robocon -->
-
-  </div>
-</section>
-
-<!-- ═══════════════════════ MY PCBs ═══════════════════════ -->
-<section id="pcbs">
+<!-- ═══════════════════════ DETAIL: UGV ═══════════════════════ -->
+<div class="view detail" id="p-ugv">
   <div class="container">
-    <div class="section-header">
-      <div class="section-eyebrow">Hardware Design</div>
-      <h2 class="section-title">My <span class="hl">PCBs</span></h2>
-      <div class="section-divider"></div>
+    <a href="#work" class="back-link">← All Projects</a>
+    <div class="detail-head">
+      <div class="detail-cat">// Defence Robotics · Indian Army</div>
+      <h2 class="detail-title">UGV A/T</h2>
+      <div class="detail-sub">Anti-Tank Mine Laying System</div>
+      <p class="detail-summary">Semi-autonomous UGV built with the 19 Engineer Regiment for automated excavation and precision mine placement, keeping soldiers out of danger. Field-tested in sub-zero, high-altitude conditions.</p>
+      <div class="badge">★ Top 30 of 260+ entries — Northern Command Inno Yodha 2025–26</div>
     </div>
 
-    <!-- PCB 01 — DD Robocon Actuator + Interface Board -->
-    <div class="project-card">
-      <div class="project-header">
-        <div class="project-header-img">
-          <img src="media/PCB3.jpeg" alt="Vineet Sharma holding the assembled Actuator PCB">
-        </div>
-        <div class="project-header-info">
-          <div class="project-number">01</div>
-          <div class="project-category">// 4-Layer PCB · DD Robocon 2026 · IIT Delhi</div>
-          <div class="project-title">Actuator + Interface Board</div>
-          <div class="project-subtitle">Modular Robot Electronics — First-Try Bring-Up</div>
-          <p class="project-desc">
-            First 4-layer PCB, working perfectly on first bring-up. A modular two-board system — a fixed
-            Actuator Board plus a detachable, shield-style Interface Board — so the controller can be
-            swapped season to season without touching the power layer. Every SMD hand-soldered in-house.
-          </p>
-          <div class="project-tags">
-            <span class="ptag">4-Layer PCB</span>
-            <span class="ptag">Modular Design</span>
-            <span class="ptag">Hand-Soldered SMD</span>
-            <span class="ptag">Motor / Servo / Pneumatic Control</span>
-            <span class="ptag">Detachable Interface Board</span>
-          </div>
+    <div class="gallery">
+      <div class="g-cell"><img src="media/ugv1.jpg" alt="UGV side view" onclick="openLightbox(this.src)"><div class="g-label">UGV · Side View</div></div>
+      <div class="g-cell"><video src="media/360%20Deg%20Rotation.mp4" controls playsinline preload="metadata"></video><div class="g-label">360° Rotation Demo</div></div>
+      <div class="g-cell"><video src="media/Drive.mp4" controls playsinline preload="metadata"></video><div class="g-label">Drive Test — Field Run</div></div>
+      <div class="g-cell"><img src="media/cad3d.jpg" alt="CAD 3D assembly" onclick="openLightbox(this.src)"><div class="g-label">CAD · 3D Assembly</div></div>
+      <div class="g-cell"><img src="media/ugv2.jpg" alt="UGV" onclick="openLightbox(this.src)"><div class="g-label">UGV · Field Unit</div></div>
+      <div class="g-cell"><img src="media/team.jpg" alt="Team with 19 Engineer Regiment" onclick="openLightbox(this.src)"><div class="g-label">Team · 19 Engineer Regiment</div></div>
+    </div>
+
+    <div class="detail-cols">
+      <div>
+        <div class="section-sub-title">// My Role — Embedded Systems Lead</div>
+        <ul class="role-list">
+          <li>Designed the <strong>control architecture</strong> around Teensy 4.1 and a custom interface board</li>
+          <li>Built the <strong>4-wheel BLDC hub-motor drive</strong> with per-wheel ESC control</li>
+          <li>Integrated <strong>433 MHz telemetry</strong> (300–500 m) and <strong>5.8 GHz FPV video</strong></li>
+          <li>Designed and fabricated <strong>interface/power PCBs in-house</strong></li>
+          <li>Managed the <strong>13S LiFePO4 power system</strong> and led field testing at the army unit</li>
+        </ul>
+      </div>
+      <div>
+        <div class="section-sub-title">// Stack</div>
+        <div class="tags">
+          <span class="ptag">Teensy 4.1</span><span class="ptag">BLDC Hub Motors</span><span class="ptag">433 MHz Telemetry</span>
+          <span class="ptag">5.8 GHz FPV</span><span class="ptag">Nema 34 + TB6600</span><span class="ptag">13S LiFePO4</span>
+          <span class="ptag">Custom PCB</span>
         </div>
       </div>
+    </div>
 
-      <div class="project-body">
+    <div class="detail-docs">
+      <a class="btn-outline" href="media/LOA.pdf" target="_blank">Letter of Appreciation ↗</a>
+    </div>
 
-        <!-- ── MEDIA GRID ── -->
-        <div class="section-sub-title" style="margin-bottom:18px;">// Build &amp; Bring-Up Documentation</div>
-        <div class="media-grid">
-
-          <!-- Col 1 tall -->
-          <div class="media-cell tall">
-            <img src="media/PCB4.jpeg" alt="Actuator Board — bare PCB, front"
-                 onclick="openLightbox(this.src)">
-            <div class="media-label">Actuator Board — Bare PCB</div>
-          </div>
-
-          <!-- Col 2 row 1 -->
-          <div class="media-cell">
-            <img src="media/PCB2.jpeg" alt="Interface Board stacked on Actuator Board"
-                 onclick="openLightbox(this.src)">
-            <div class="media-label">Interface Board Stacked On Top</div>
-          </div>
-
-          <!-- Col 3 row 1 -->
-          <div class="media-cell">
-            <img src="media/PCB6.jpeg" alt="First power-on with all channel LEDs live"
-                 onclick="openLightbox(this.src)">
-            <div class="media-label">First Power-On — All Channels Live</div>
-          </div>
-
-          <!-- Col 2 row 2 -->
-          <div class="media-cell">
-            <img src="media/PCB1.jpeg" alt="Assembled board close-up under UV light"
-                 onclick="openLightbox(this.src)">
-            <div class="media-label">Fully Assembled — Close-Up</div>
-          </div>
-
-          <!-- Col 3 row 2 -->
-          <div class="media-cell">
-            <img src="media/PCB5.jpeg" alt="Back of the board with team and mentor names"
-                 onclick="openLightbox(this.src)">
-            <div class="media-label">Back Side — Team &amp; Mentors</div>
-          </div>
-
-        </div><!-- end media-grid -->
-
-        <!-- ── Highlights + Specs ── -->
-        <div class="project-body-grid">
-          <div>
-            <div class="section-sub-title">// Design &amp; Assembly Highlights</div>
-            <ul class="role-list">
-              <li>Designed a <strong>4-layer PCB</strong> end-to-end in Altium — schematic, layout, manufacturing files</li>
-              <li>Architected a <strong>modular two-board system</strong>: fixed Actuator Board + detachable, shield-style Interface Board</li>
-              <li>Routed channels for <strong>10 motor drivers, servo interfaces, and pneumatic relay control</strong> with on-board power regulation</li>
-              <li>Hand-soldered <strong>every SMD component</strong> in-house with the team</li>
-              <li>Clean <strong>first-try bring-up</strong> — contributed to the team's <strong>AIR 5 finish</strong> at DD Robocon 2026</li>
-            </ul>
-          </div>
-          <div>
-            <div class="section-sub-title">// Board Specs</div>
-            <div class="tech-grid">
-              <div class="tech-item"><div class="tech-name">4-Layer Stack-Up</div><div class="tech-desc">Designed in Altium · PCB Power manufactured</div></div>
-              <div class="tech-item"><div class="tech-name">Actuator Board</div><div class="tech-desc">10 motor channels · servo + pneumatic outputs</div></div>
-              <div class="tech-item"><div class="tech-name">Interface Board</div><div class="tech-desc">Detachable, shield-style · swappable MCU</div></div>
-              <div class="tech-item"><div class="tech-name">Assembly</div><div class="tech-desc">100% hand-soldered SMD, in-house</div></div>
-              <div class="tech-item"><div class="tech-name">Result</div><div class="tech-desc">First-try bring-up · AIR 5 · DD Robocon 2026</div></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- ── Award Banner ── -->
-        <div class="loa-pdf-section" style="margin-bottom:0;">
-          <div class="loa-award-banner">
-            ★ &nbsp; Board contributed to the team's <strong>AIR 5 finish</strong> — DD Robocon 2026, IIT Delhi, Prasar Bharati &amp; STPI &nbsp; ★
-          </div>
-        </div>
-
-      </div><!-- end project-body -->
-      <div class="project-more">// More PCBs coming soon — check back for updates</div>
-    </div><!-- end project-card pcb01 -->
-
+    <div class="next-bar"><a href="#work">← All Projects</a><a href="#eyrc">Next: MazeSolver Bot →</a></div>
   </div>
-</section>
+</div>
 
-<!-- ═══════════════════════ ACHIEVEMENTS ═══════════════════════ -->
-<section id="achievements">
+<!-- ═══════════════════════ DETAIL: eYRC ═══════════════════════ -->
+<div class="view detail" id="p-eyrc">
   <div class="container">
-    <div class="section-header">
-      <div class="section-eyebrow">Track Record</div>
-      <h2 class="section-title">Field <span class="hl">Achievements</span></h2>
-      <div class="section-divider"></div>
+    <a href="#work" class="back-link">← All Projects</a>
+    <div class="detail-head">
+      <div class="detail-cat">// FPGA Robotics · IIT Bombay</div>
+      <h2 class="detail-title">MazeSolver Bot</h2>
+      <div class="detail-sub">e-Yantra Robotics Competition 2025–26</div>
+      <p class="detail-summary">FPGA-powered autonomous robot on a De0-Nano (Cyclone IV) that navigates dynamic mazes in real time while sensing temperature, humidity and soil moisture — all in parallel hardware logic.</p>
+      <div class="badge">★ Top 50 nationally — eYRC 2025–26 · Level 3 Certificate, IIT Bombay</div>
     </div>
-    <div class="coming-soon-box">
-      <div class="coming-soon-icon">🏆</div>
-      <div class="coming-soon-title">Achievements Coming Soon</div>
-      <div class="coming-soon-sub">// This section is being updated — check back shortly</div>
-    </div>
-  </div>
-</section>
 
-<!-- ═══════════════════════ CERTIFICATIONS ═══════════════════════ -->
-<section id="certifications">
-  <div class="container">
-    <div class="section-header">
-      <div class="section-eyebrow">Learning &amp; Development</div>
-      <h2 class="section-title">Certifi<span class="hl">cations</span></h2>
-      <div class="section-divider"></div>
+    <div class="gallery">
+      <div class="g-cell"><img src="media/eyrc/bot-eyrc.jpeg" alt="MazeSolver Bot in arena" onclick="openLightbox(this.src)"><div class="g-label">Bot · eYRC Arena</div></div>
+      <div class="g-cell"><img src="media/eyrc/robotickit-eyrc.jpeg" alt="Sensor assembly" onclick="openLightbox(this.src)"><div class="g-label">Sensor &amp; Electronics Assembly</div></div>
+      <div class="g-cell"><img src="media/eyrc/simulation.jpeg" alt="ModelSim DHT11 simulation" onclick="openLightbox(this.src)"><div class="g-label">ModelSim · DHT11 Simulation</div></div>
+      <div class="g-cell"><img src="media/eyrc/eyantra_frontv.jpeg" alt="e-Yantra kit" onclick="openLightbox(this.src)"><div class="g-label">e-Yantra Kit · De0-Nano</div></div>
+      <div class="g-cell"><img src="media/eyrc/team-eyrc.jpeg" alt="Team eYRC" onclick="openLightbox(this.src)"><div class="g-label">Team · eYRC 25–26</div></div>
     </div>
-    <div class="cert-grid">
 
-      <!-- CERT 01 — Quantitative Aptitude -->
-      <div class="cert-card">
-        <div class="cert-card-top">
-          <div class="cert-platform-badge">Udemy</div>
-          <div class="cert-title">Quantitative Aptitude</div>
-        </div>
-        <div class="cert-meta">Completed · Online Course · Mathematics &amp; Reasoning</div>
-        <div class="cert-desc">
-          Numerical ability, data interpretation, and logical reasoning — building the analytical
-          foundation for engineering and competitive examinations.
-        </div>
-        <div class="cert-topics">
-          <span class="cert-topic">Number Systems</span>
-          <span class="cert-topic">Algebra</span>
-          <span class="cert-topic">Data Interpretation</span>
-          <span class="cert-topic">Logical Reasoning</span>
-        </div>
-        <div class="cert-pdf-embed">
-          <iframe
-            src="media/QuantitativeAptitude.pdf"
-            title="Quantitative Aptitude Certificate">
-          </iframe>
-          <div class="cert-pdf-overlay-label">// Certificate</div>
-        </div>
-        <div class="cert-card-footer">
-          <div class="cert-footer-label">// Udemy · Online Platform</div>
-          <a href="media/QuantitativeAptitude.pdf" target="_blank" class="cert-view-btn">
-            View PDF ↗
-          </a>
+    <div class="detail-cols">
+      <div>
+        <div class="section-sub-title">// My Role — FPGA Systems &amp; Firmware</div>
+        <ul class="role-list">
+          <li>Designed a <strong>custom CPU core in Verilog</strong> on Cyclone IV fabric</li>
+          <li>Wrote <strong>DHT11, HC-SR04 and UART drivers in Verilog</strong>, verified in ModelSim</li>
+          <li>Built a <strong>parallel architecture</strong> — sensing, motor FSM, maze logic and UART run concurrently as hardware</li>
+          <li>Developed a <strong>real-time maze-solving FSM</strong> that adapts to reconfigured arenas</li>
+        </ul>
+      </div>
+      <div>
+        <div class="section-sub-title">// Stack</div>
+        <div class="tags">
+          <span class="ptag">Verilog HDL</span><span class="ptag">De0-Nano · Cyclone IV</span><span class="ptag">ModelSim</span>
+          <span class="ptag">Custom CPU</span><span class="ptag">FSM Design</span><span class="ptag">UART</span>
+          <span class="ptag">DHT11 · HC-SR04</span>
         </div>
       </div>
-
-      <!-- Add more cert cards here in future -->
-
     </div>
-  </div>
-</section>
 
-<!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+    <div class="detail-docs">
+      <a class="btn-outline" href="media/eyrc/eyrc_2026-MB_1737-2416-vineet-sharma.pdf" target="_blank">eYRC Certificate ↗</a>
+    </div>
+
+    <div class="next-bar"><a href="#ugv">← Previous: UGV A/T</a><a href="#robocon">Next: DD Robocon 2025 →</a></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════ DETAIL: ROBOCON 2025 ═══════════════════════ -->
+<div class="view detail" id="p-robocon">
+  <div class="container">
+    <a href="#work" class="back-link">← All Projects</a>
+    <div class="detail-head">
+      <div class="detail-cat">// Robotics Competition · IIT Delhi</div>
+      <h2 class="detail-title">DD Robocon 2025</h2>
+      <div class="detail-sub">Basketball Bots · National Robotics Championship</div>
+      <p class="detail-summary">Two-robot basketball system for DD Robocon 2025 (ABU Robocon format). I worked on the electronics side — custom PCB and FOC-based BLDC motor control.</p>
+      <div class="badge">★ National finals · IIT Delhi · 40 student teams · 12–13 July 2025</div>
+    </div>
+
+    <div class="gallery">
+      <div class="g-cell wide"><video src="media/DDVideo.mp4" controls playsinline preload="metadata"></video><div class="g-label">Robot Demonstration</div></div>
+      <div class="g-cell"><img src="media/DD2.jpeg" alt="Basketball bot" onclick="openLightbox(this.src)"><div class="g-label">Basketball Bot</div></div>
+      <div class="g-cell"><img src="media/DD3.jpeg" alt="Robot at IIT Delhi" onclick="openLightbox(this.src)"><div class="g-label">Robot · IIT Delhi</div></div>
+      <div class="g-cell"><img src="media/DD5.jpeg" alt="Custom PCB" onclick="openLightbox(this.src)"><div class="g-label">Custom Electronics · PCB</div></div>
+      <div class="g-cell"><img src="media/DD4.jpeg" alt="Team" onclick="openLightbox(this.src)"><div class="g-label">Team</div></div>
+      <div class="g-cell"><img src="media/DD%20Certificate.jpeg" alt="Certificate" onclick="openLightbox(this.src)"><div class="g-label">Certificate of Participation</div></div>
+    </div>
+
+    <div class="detail-cols">
+      <div>
+        <div class="section-sub-title">// My Role — Electronics &amp; Embedded</div>
+        <ul class="role-list">
+          <li>Implemented <strong>Field-Oriented Control (FOC)</strong> on VESC ESCs driven by a Teensy MCU</li>
+          <li>Contributed to the <strong>custom PCB</strong> integrating controller, motor interfaces and support electronics</li>
+          <li>Developed and debugged the <strong>motor-control layer</strong> for reliable repeated runs on the competition floor</li>
+        </ul>
+      </div>
+      <div>
+        <div class="section-sub-title">// Stack</div>
+        <div class="tags">
+          <span class="ptag">Teensy</span><span class="ptag">VESC</span><span class="ptag">FOC</span>
+          <span class="ptag">BLDC</span><span class="ptag">Embedded C/C++</span><span class="ptag">PCB Design</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="next-bar"><a href="#eyrc">← Previous: MazeSolver Bot</a><a href="#pcb">Next: Actuator Board →</a></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════ DETAIL: PCB ═══════════════════════ -->
+<div class="view detail" id="p-pcb">
+  <div class="container">
+    <a href="#work" class="back-link">← All Projects</a>
+    <div class="detail-head">
+      <div class="detail-cat">// 4-Layer PCB · DD Robocon 2026 · IIT Delhi</div>
+      <h2 class="detail-title">Actuator + Interface Board</h2>
+      <div class="detail-sub">Modular Robot Electronics</div>
+      <p class="detail-summary">My first 4-layer PCB, working on first bring-up. A fixed Actuator Board plus a detachable, shield-style Interface Board, so the controller can be swapped without touching the power layer.</p>
+      <div class="badge">★ Contributed to the team's AIR 5 finish — DD Robocon 2026, IIT Delhi</div>
+    </div>
+
+    <div class="gallery">
+      <div class="g-cell"><img src="media/PCB3.jpeg" alt="Assembled Actuator PCB" onclick="openLightbox(this.src)"><div class="g-label">Assembled Board</div></div>
+      <div class="g-cell"><img src="media/PCB4.jpeg" alt="Bare PCB" onclick="openLightbox(this.src)"><div class="g-label">Actuator Board — Bare PCB</div></div>
+      <div class="g-cell"><img src="media/PCB2.jpeg" alt="Interface board stacked" onclick="openLightbox(this.src)"><div class="g-label">Interface Board Stacked</div></div>
+      <div class="g-cell"><img src="media/PCB6.jpeg" alt="First power-on" onclick="openLightbox(this.src)"><div class="g-label">First Power-On</div></div>
+      <div class="g-cell"><img src="media/PCB1.jpeg" alt="Close-up" onclick="openLightbox(this.src)"><div class="g-label">Close-Up</div></div>
+      <div class="g-cell"><img src="media/PCB5.jpeg" alt="Back side" onclick="openLightbox(this.src)"><div class="g-label">Back Side</div></div>
+    </div>
+
+    <div class="detail-cols">
+      <div>
+        <div class="section-sub-title">// Design Highlights</div>
+        <ul class="role-list">
+          <li>Designed the <strong>4-layer PCB end-to-end in Altium</strong> — schematic, layout, manufacturing files</li>
+          <li>Architected a <strong>modular two-board system</strong> with a swappable MCU interface</li>
+          <li>Routed <strong>10 motor drivers, servo interfaces and pneumatic relay control</strong> with on-board power regulation</li>
+          <li><strong>Hand-soldered every SMD part</strong> in-house</li>
+        </ul>
+      </div>
+      <div>
+        <div class="section-sub-title">// Stack</div>
+        <div class="tags">
+          <span class="ptag">Altium</span><span class="ptag">4-Layer PCB</span><span class="ptag">Motor Drivers</span>
+          <span class="ptag">Servo · Pneumatic</span><span class="ptag">Power Regulation</span><span class="ptag">SMD Soldering</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="next-bar"><a href="#robocon">← Previous: DD Robocon 2025</a><a href="#work">All Projects →</a></div>
+  </div>
+</div>
+
+<!-- FOOTER -->
 <footer>
   <div class="footer-name">Vineet Sharma</div>
   <div class="footer-sub">Electronics Engineer · FPGA/HDL Systems · Embedded Robotics · Defence Tech</div>
@@ -1284,18 +692,34 @@
   function closeLightbox() {
     document.getElementById('lightbox').classList.remove('active');
   }
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') closeLightbox();
-  });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
 
-  /* Video play on click */
-  function playVid(vidId, overlayId) {
-    const vid = document.getElementById(vidId);
-    const overlay = document.getElementById(overlayId);
-    overlay.style.display = 'none';
-    vid.controls = true;
-    vid.play();
+  /* Router: #ugv / #eyrc / #robocon / #pcb open a project; anything else shows home */
+  const PROJECTS = ['ugv', 'eyrc', 'robocon', 'pcb'];
+
+  function route() {
+    const h = decodeURIComponent(location.hash.slice(1));
+    document.querySelectorAll('.detail').forEach(d => {
+      d.classList.remove('active');
+      d.querySelectorAll('video').forEach(v => v.pause());
+    });
+
+    if (PROJECTS.includes(h)) {
+      document.body.classList.add('in-detail');
+      document.getElementById('p-' + h).classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'instant' });
+    } else {
+      document.body.classList.remove('in-detail');
+      const el = h && h !== 'top' ? document.getElementById(h) : null;
+      if (el) {
+        requestAnimationFrame(() => el.scrollIntoView({ behavior: 'smooth', block: 'start' }));
+      } else {
+        window.scrollTo({ top: 0, behavior: 'instant' });
+      }
+    }
   }
+  window.addEventListener('hashchange', route);
+  window.addEventListener('DOMContentLoaded', route);
 </script>
 </body>
 </html>
