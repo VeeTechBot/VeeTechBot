@@ -134,28 +134,16 @@
     margin-bottom:28px; padding-left:4px;
   }
   .hero-bio {
-    font-size:15px; line-height:1.8; color:var(--off-white); margin-bottom:36px;
-    max-width:480px; border-left:2px solid var(--amber-dim); padding-left:20px;
-  }
-  .hero-stats { display:flex; gap:40px; margin-bottom:40px; }
-  .stat-num { font-family:'Oswald',sans-serif; font-size:34px; font-weight:700; color:var(--amber); line-height:1; }
-  .stat-label {
-    font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:.2em;
-    color:var(--dim); text-transform:uppercase; margin-top:4px;
+    font-size:15px; line-height:1.8; color:var(--off-white); margin-bottom:40px;
+    max-width:520px; border-left:2px solid var(--amber-dim); padding-left:20px;
   }
   .hero-btns { display:flex; gap:16px; flex-wrap:wrap; }
   .hero-visual { position:relative; background:var(--olive); border:1px solid var(--border); overflow:hidden; }
-  .hero-visual img { width:100%; height:400px; object-fit:cover; opacity:.85; display:block; }
+  .hero-visual img { width:100%; height:520px; object-fit:cover; object-position:center top; opacity:.95; display:block; }
   .hero-visual::before {
     content:''; position:absolute; inset:0;
-    background:linear-gradient(135deg,rgba(200,149,26,.15) 0%,transparent 50%,rgba(42,61,20,.3) 100%);
+    background:linear-gradient(135deg,rgba(200,149,26,.12) 0%,transparent 50%,rgba(42,61,20,.25) 100%);
     z-index:1; pointer-events:none;
-  }
-  .hero-visual-label {
-    position:absolute; bottom:16px; left:16px;
-    font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.15em;
-    color:var(--amber); z-index:2; background:rgba(7,8,10,.7);
-    padding:4px 10px; text-transform:uppercase;
   }
   .corner-mark { position:absolute; width:20px; height:20px; z-index:3; }
   .corner-mark.tl { top:0; left:0; border-top:2px solid var(--amber); border-left:2px solid var(--amber); }
@@ -222,6 +210,7 @@
   }
   .chip:hover { border-color:var(--amber); color:var(--amber); background:rgba(200,149,26,.08); }
   .chip b { color:var(--amber); font-weight:600; }
+  .chip.nocase { text-transform:none; letter-spacing:.05em; }
 
   /* ── PROJECT DETAIL ── */
   .detail { padding:110px 0 60px; }
@@ -264,6 +253,41 @@
     color:var(--amber); background:rgba(7,8,10,.82); padding:5px 10px; text-transform:uppercase;
   }
   .g-cell video + .g-label { bottom:auto; top:0; }
+
+  /* ── PCB 3D VIEWER ── */
+  .viewer { margin-bottom:48px; }
+  .viewer-box {
+    position:relative; height:560px; background:var(--olive);
+    border:1px solid var(--border-bright); overflow:hidden;
+  }
+  .viewer-box::before {
+    content:''; position:absolute; top:0; left:0; right:0; height:2px; z-index:3;
+    background:linear-gradient(90deg,transparent,var(--amber),transparent);
+  }
+  .viewer-box iframe { width:100%; height:100%; border:none; display:block; background:#111; }
+  .viewer-placeholder {
+    position:absolute; inset:0; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:18px; text-align:center; padding:24px;
+    background:
+      linear-gradient(rgba(200,149,26,0.06) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(200,149,26,0.06) 1px,transparent 1px),
+      var(--olive);
+    background-size:28px 28px,28px 28px,auto;
+  }
+  .viewer-ph-title {
+    font-family:'Oswald',sans-serif; font-size:24px; font-weight:700;
+    text-transform:uppercase; letter-spacing:.08em; color:var(--white);
+  }
+  .viewer-ph-sub {
+    font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.2em;
+    color:var(--dim); text-transform:uppercase;
+  }
+  .viewer-actions { display:flex; gap:14px; flex-wrap:wrap; justify-content:center; }
+  .viewer-note {
+    margin-top:10px; font-family:'IBM Plex Mono',monospace; font-size:10px;
+    letter-spacing:.1em; color:var(--dim);
+  }
+  .viewer-bar { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-top:12px; }
 
   .detail-cols { display:grid; grid-template-columns:3fr 2fr; gap:56px; margin-bottom:44px; }
   .role-list { list-style:none; display:flex; flex-direction:column; gap:12px; }
@@ -309,7 +333,6 @@
   .hero-left > *:nth-child(3) { animation-delay:.3s; }
   .hero-left > *:nth-child(4) { animation-delay:.4s; }
   .hero-left > *:nth-child(5) { animation-delay:.5s; }
-  .hero-left > *:nth-child(6) { animation-delay:.6s; }
   .hero-right { animation:fadeUp .8s ease .3s both; }
   .detail.active { animation:fadeUp .5s ease both; }
 
@@ -325,11 +348,12 @@
     .nav-links li:nth-child(n+2):nth-child(-n+3) { display:none; }
     .container { padding:0 20px; }
     .hero-grid { grid-template-columns:1fr; gap:40px; }
-    .hero-stats { gap:24px; }
+    .hero-visual img { height:420px; }
     .work-grid { grid-template-columns:1fr; }
     .detail-cols { grid-template-columns:1fr; gap:36px; }
     .g-cell.wide { grid-column:auto; }
     .gallery { grid-template-columns:1fr 1fr; }
+    .viewer-box { height:420px; }
   }
   @media (max-width:560px) { .gallery { grid-template-columns:1fr; } }
 </style>
@@ -365,13 +389,8 @@
           <h1 class="hero-name">Vineet<br><span class="highlight">Sharma</span></h1>
           <div class="hero-title">Electronics Engineer</div>
           <p class="hero-bio">
-            I build real hardware — from field-deployed defence UGVs to FPGA-based autonomous robots and custom PCBs.
+            I am an Electronics and Communication Engineering student passionate about robotics, PCB design, VLSI, and FPGA-based systems. As an active member of SRM Team Robocon, I have gained hands-on experience in robot design, embedded systems, and hardware development. I have also worked on Unmanned Ground Vehicles (UGVs) and e-Yantra robotics projects, exploring the integration of electronics, control systems, and intelligent automation. I aim to develop innovative hardware solutions by combining electronics, robotics, and digital design.
           </p>
-          <div class="hero-stats">
-            <div class="stat"><div class="stat-num">Top 30</div><div class="stat-label">Inno Yodha · Indian Army</div></div>
-            <div class="stat"><div class="stat-num">Top 50</div><div class="stat-label">eYRC · IIT Bombay</div></div>
-            <div class="stat"><div class="stat-num">AIR 5</div><div class="stat-label">DD Robocon 2026</div></div>
-          </div>
           <div class="hero-btns">
             <a href="#work" class="btn-primary">View Work</a>
             <a href="media/Vineet_Sharma_CV.pdf" target="_blank" class="btn-outline">Resume ↗</a>
@@ -381,8 +400,8 @@
           <div class="hero-visual">
             <div class="corner-mark tl"></div><div class="corner-mark tr"></div>
             <div class="corner-mark bl"></div><div class="corner-mark br"></div>
-            <img src="media/team.jpg" alt="Tech Hub Team — 19 Engineer Regiment">
-            <div class="hero-visual-label">// UGV Team — 19 Engineer Regiment, Indian Army</div>
+            <!-- If you know the exact extension, replace the src below with it (e.g. media/ZPortFolioPIk.jpg) -->
+            <img id="hero-img" src="media/ZPortFolioPIk.jpeg" alt="Vineet Sharma" onerror="heroFallback(this)">
           </div>
         </div>
       </div>
@@ -481,10 +500,10 @@
         <div class="section-divider"></div>
       </div>
       <div class="chip-row">
-        <!-- EDIT: replace the three links below with your real details -->
-        <a class="chip" href="mailto:your-email@example.com"><b>Email</b> · your-email@example.com</a>
-        <a class="chip" href="https://www.linkedin.com/in/your-profile" target="_blank"><b>LinkedIn</b> ↗</a>
-        <a class="chip" href="https://github.com/your-username" target="_blank"><b>GitHub</b> ↗</a>
+        <a class="chip nocase" href="mailto:vineet.ece.study@gmail.com"><b>Email</b> · vineet.ece.study@gmail.com</a>
+        <a class="chip nocase" href="tel:+917358158086"><b>Phone</b> · +91 73581 58086</a>
+        <a class="chip" href="https://www.linkedin.com/in/vineet1sharma/" target="_blank"><b>LinkedIn</b> ↗</a>
+        <a class="chip" href="https://github.com/VeeTechBot" target="_blank"><b>GitHub</b> ↗</a>
         <a class="chip" href="media/Vineet_Sharma_CV.pdf" target="_blank"><b>Resume</b> · PDF ↗</a>
       </div>
     </div>
@@ -611,6 +630,24 @@
       <div class="g-cell"><img src="media/DD%20Certificate.jpeg" alt="Certificate" onclick="openLightbox(this.src)"><div class="g-label">Certificate of Participation</div></div>
     </div>
 
+    <!-- 3D PCB VIEWER — BOT1_2025 -->
+    <div class="viewer">
+      <div class="section-sub-title">// Interactive 3D PCB — BOT1_2025</div>
+      <div class="viewer-box">
+        <!-- EDIT: if the link is not public, replace data-src with your personal-workspace Share → Embed link -->
+        <div class="viewer-placeholder">
+          <div class="viewer-ph-title">BOT1_2025 · 3D PCB</div>
+          <div class="viewer-ph-sub">Altium 365 Viewer</div>
+          <div class="viewer-actions">
+            <button class="btn-primary" onclick="loadViewer(this)"
+              data-src="https://apac-srm-institute-of-science-and-technology-chennai-s.365.altium.com/designs/C4B3AA51-1845-4374-99F5-4921A0527137?activeDocumentId=BOT1_2025.PcbDoc&amp;variant=[No+Variations]&amp;activeView=3D&amp;location=[3,64.86,41.01,0.09,64.86,41.01,-105.55,0,1,0]#design">Load 3D PCB</button>
+            <a class="btn-outline" target="_blank" href="https://apac-srm-institute-of-science-and-technology-chennai-s.365.altium.com/designs/C4B3AA51-1845-4374-99F5-4921A0527137?activeDocumentId=BOT1_2025.PcbDoc&amp;variant=[No+Variations]&amp;activeView=3D&amp;location=[3,64.86,41.01,0.09,64.86,41.01,-105.55,0,1,0]#design">Open in Altium 365 ↗</a>
+          </div>
+        </div>
+      </div>
+      <div class="viewer-note">// Drag to rotate · scroll to zoom</div>
+    </div>
+
     <div class="detail-cols">
       <div>
         <div class="section-sub-title">// My Role — Electronics &amp; Embedded</div>
@@ -643,6 +680,24 @@
       <div class="detail-sub">Modular Robot Electronics</div>
       <p class="detail-summary">My first 4-layer PCB, working on first bring-up. A fixed Actuator Board plus a detachable, shield-style Interface Board, so the controller can be swapped without touching the power layer.</p>
       <div class="badge">★ Contributed to the team's AIR 5 finish — DD Robocon 2026, IIT Delhi</div>
+    </div>
+
+    <!-- 3D PCB VIEWER — Actuator Board -->
+    <div class="viewer">
+      <div class="section-sub-title">// Interactive 3D PCB — Actuator Board</div>
+      <div class="viewer-box">
+        <!-- EDIT: if the link is not public, replace data-src with your personal-workspace Share → Embed link -->
+        <div class="viewer-placeholder">
+          <div class="viewer-ph-title">Actuator Board · 3D PCB</div>
+          <div class="viewer-ph-sub">Altium 365 Viewer</div>
+          <div class="viewer-actions">
+            <button class="btn-primary" onclick="loadViewer(this)"
+              data-src="https://apac-srm-institute-of-science-and-technology-chennai-s.365.altium.com/designs/8B39B08F-B375-43AA-BAEE-E5F742F6C5A9?variant=[No+Variations]&amp;activeView=3D&amp;activeDocumentId=PCB1.PcbDoc&amp;location=[3,40.3,67.27,0.09,40.3,67.27,-97.41,0,1,0]#design">Load 3D PCB</button>
+            <a class="btn-outline" target="_blank" href="https://apac-srm-institute-of-science-and-technology-chennai-s.365.altium.com/designs/8B39B08F-B375-43AA-BAEE-E5F742F6C5A9?variant=[No+Variations]&amp;activeView=3D&amp;activeDocumentId=PCB1.PcbDoc&amp;location=[3,40.3,67.27,0.09,40.3,67.27,-97.41,0,1,0]#design">Open in Altium 365 ↗</a>
+          </div>
+        </div>
+      </div>
+      <div class="viewer-note">// Drag to rotate · scroll to zoom</div>
     </div>
 
     <div class="gallery">
@@ -684,6 +739,29 @@
 </footer>
 
 <script>
+  /* Hero photo: tries common extensions if the first one 404s */
+  const HERO_EXTS = ['jpeg', 'jpg', 'png', 'webp', 'JPG', 'JPEG', 'PNG'];
+  let heroIdx = 0;
+  function heroFallback(img) {
+    heroIdx++;
+    if (heroIdx < HERO_EXTS.length) {
+      img.src = 'media/ZPortFolioPIk.' + HERO_EXTS[heroIdx];
+    } else {
+      img.onerror = null;
+    }
+  }
+
+  /* Altium 365 viewer: loads only when the button is clicked */
+  function loadViewer(btn) {
+    const box = btn.closest('.viewer-box');
+    const frame = document.createElement('iframe');
+    frame.src = btn.dataset.src;
+    frame.allowFullscreen = true;
+    frame.title = 'Altium 365 PCB 3D Viewer';
+    box.innerHTML = '';
+    box.appendChild(frame);
+  }
+
   /* Lightbox */
   function openLightbox(src) {
     document.getElementById('lightbox-img').src = src;
