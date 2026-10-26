@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Vineet Sharma | Embedded Systems Engineer</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2307080a'/%3E%3Crect x='3' y='3' width='58' height='58' fill='none' stroke='%23c8951a' stroke-width='3'/%3E%3Cpath d='M17 19 L32 47 L47 19' fill='none' stroke='%23c8951a' stroke-width='7' stroke-linejoin='miter'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600;700&family=IBM+Plex+Mono:wght@300;400;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 <style>
@@ -262,32 +263,47 @@
   }
   .viewer-box::before {
     content:''; position:absolute; top:0; left:0; right:0; height:2px; z-index:3;
-    background:linear-gradient(90deg,transparent,var(--amber),transparent);
+    background:linear-gradient(90deg,transparent,var(--amber),transparent); pointer-events:none;
   }
   .viewer-box iframe { width:100%; height:100%; border:none; display:block; background:#111; }
-  .viewer-placeholder {
-    position:absolute; inset:0; display:flex; flex-direction:column;
-    align-items:center; justify-content:center; gap:18px; text-align:center; padding:24px;
-    background:
-      linear-gradient(rgba(200,149,26,0.06) 1px,transparent 1px),
-      linear-gradient(90deg,rgba(200,149,26,0.06) 1px,transparent 1px),
-      var(--olive);
-    background-size:28px 28px,28px 28px,auto;
-  }
-  .viewer-ph-title {
-    font-family:'Oswald',sans-serif; font-size:24px; font-weight:700;
-    text-transform:uppercase; letter-spacing:.08em; color:var(--white);
-  }
-  .viewer-ph-sub {
-    font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.2em;
-    color:var(--dim); text-transform:uppercase;
-  }
-  .viewer-actions { display:flex; gap:14px; flex-wrap:wrap; justify-content:center; }
   .viewer-note {
-    margin-top:10px; font-family:'IBM Plex Mono',monospace; font-size:10px;
+    font-family:'IBM Plex Mono',monospace; font-size:10px;
     letter-spacing:.1em; color:var(--dim);
   }
   .viewer-bar { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-top:12px; }
+  .viewer-bar .btn-outline { padding:9px 20px; font-size:12px; }
+
+  /* ── SIMULATIONS (dropdowns) ── */
+  .sims { margin-bottom:48px; }
+  .sim-item {
+    border:1px solid var(--border); background:rgba(30,42,14,.35);
+    margin-bottom:10px; transition:border-color .2s;
+  }
+  .sim-item[open] { border-color:var(--border-bright); }
+  .sim-item summary {
+    list-style:none; cursor:pointer; display:flex; align-items:center; justify-content:space-between;
+    padding:18px 24px; gap:16px;
+    font-family:'Oswald',sans-serif; font-size:18px; font-weight:600;
+    text-transform:uppercase; letter-spacing:.08em; color:var(--white);
+    transition:color .2s, background .2s;
+  }
+  .sim-item summary::-webkit-details-marker { display:none; }
+  .sim-item summary:hover { color:var(--amber); background:rgba(200,149,26,.05); }
+  .sim-item summary .sim-tag {
+    font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.15em;
+    color:var(--dim); font-weight:400; margin-left:12px;
+  }
+  .sim-item summary::after {
+    content:'+'; font-family:'IBM Plex Mono',monospace; font-size:22px; color:var(--amber);
+    flex-shrink:0; transition:transform .2s;
+  }
+  .sim-item[open] summary::after { content:'–'; }
+  .sim-body { padding:0 24px 24px; }
+  .sim-body img {
+    width:100%; display:block; border:1px solid var(--border); background:#000;
+    cursor:zoom-in;
+  }
+  .sim-caption { font-size:13px; line-height:1.6; color:var(--off-white); margin-top:12px; }
 
   .detail-cols { display:grid; grid-template-columns:3fr 2fr; gap:56px; margin-bottom:44px; }
   .role-list { list-style:none; display:flex; flex-direction:column; gap:12px; }
@@ -354,6 +370,9 @@
     .g-cell.wide { grid-column:auto; }
     .gallery { grid-template-columns:1fr 1fr; }
     .viewer-box { height:420px; }
+    .sim-item summary { font-size:16px; padding:16px 18px; }
+    .sim-item summary .sim-tag { display:none; }
+    .sim-body { padding:0 18px 18px; }
   }
   @media (max-width:560px) { .gallery { grid-template-columns:1fr; } }
 </style>
@@ -575,9 +594,9 @@
 
     <div class="gallery">
       <div class="g-cell"><img src="media/eyrc/bot-eyrc.jpeg" alt="MazeSolver Bot in arena" onclick="openLightbox(this.src)"><div class="g-label">Bot · eYRC Arena</div></div>
-      <div class="g-cell"><img src="media/eyrc/robotickit-eyrc.jpeg" alt="Sensor assembly" onclick="openLightbox(this.src)"><div class="g-label">e-Yantra Kit · De0-Nano</div></div>
+      <div class="g-cell"><img src="media/eyrc/robotickit-eyrc.jpeg" alt="Sensor assembly" onclick="openLightbox(this.src)"><div class="g-label">Sensor &amp; Electronics Assembly</div></div>
       <div class="g-cell"><img src="media/eyrc/simulation.jpeg" alt="ModelSim DHT11 simulation" onclick="openLightbox(this.src)"><div class="g-label">ModelSim · DHT11 Simulation</div></div>
-      <div class="g-cell"><img src="media/eyrc/eyantra_frontv.jpeg" alt="e-Yantra kit" onclick="openLightbox(this.src)"><div class="g-label">Sensor &amp; Electronics Assembly</div></div>
+      <div class="g-cell"><img src="media/eyrc/eyantra_frontv.jpeg" alt="e-Yantra kit" onclick="openLightbox(this.src)"><div class="g-label">e-Yantra Kit · De0-Nano</div></div>
       <div class="g-cell"><img src="media/eyrc/team-eyrc.jpeg" alt="Team eYRC" onclick="openLightbox(this.src)"><div class="g-label">Team · eYRC 25–26</div></div>
     </div>
 
@@ -599,6 +618,35 @@
           <span class="ptag">DHT11 · HC-SR04</span>
         </div>
       </div>
+    </div>
+
+    <!-- SIMULATIONS -->
+    <div class="sims">
+      <div class="section-sub-title">// Simulations — ModelSim</div>
+
+      <details class="sim-item">
+        <summary><span>PWM Generator<span class="sim-tag">// Clock dividers · Duty cycle</span></span></summary>
+        <div class="sim-body">
+          <img src="media/pwm_generator.png" alt="ModelSim waveform — PWM generator testbench" onclick="openLightbox(this.src)">
+          <p class="sim-caption">Testbench waveform: 50 MHz input clock divided down to 3125 kHz and 195 kHz, with the duty-cycle counter stepping 0000 → 1111 and the generated PWM compared against the expected output.</p>
+        </div>
+      </details>
+
+      <details class="sim-item">
+        <summary><span>Ultrasonic Sensor<span class="sim-tag">// HC-SR04 · Trigger &amp; echo</span></span></summary>
+        <div class="sim-body">
+          <img src="media/ultrasonic_sensor.png" alt="ModelSim waveform — HC-SR04 ultrasonic driver testbench" onclick="openLightbox(this.src)">
+          <p class="sim-caption">Testbench waveform: trigger and echo timing for the HC-SR04 driver, with the measured distance output compared against the expected distance for each echo pulse.</p>
+        </div>
+      </details>
+
+      <details class="sim-item">
+        <summary><span>DHT11 Sensor<span class="sim-tag">// 1-wire protocol · Data decode</span></span></summary>
+        <div class="sim-body">
+          <img src="media/dht11sensor.png" alt="ModelSim waveform — DHT11 driver testbench" onclick="openLightbox(this.src)">
+          <p class="sim-caption">Testbench waveform: DHT11 single-wire frames decoded into temperature, humidity and checksum registers, compared against the expected values with a data-valid flag.</p>
+        </div>
+      </details>
     </div>
 
     <div class="detail-docs">
@@ -630,7 +678,7 @@
       <div class="g-cell"><img src="media/DD%20Certificate.jpeg" alt="Certificate" onclick="openLightbox(this.src)"><div class="g-label">Certificate of Participation</div></div>
     </div>
 
-        <!-- 3D PCB VIEWER — BOT1_2025 -->
+    <!-- 3D PCB VIEWER — BOT1_2025 -->
     <div class="viewer">
       <div class="section-sub-title">// Interactive 3D PCB — BOT1_2025</div>
       <div class="viewer-box">
@@ -682,8 +730,7 @@
       <div class="badge">★ Contributed to the team's AIR 5 finish — DD Robocon 2026, IIT Delhi</div>
     </div>
 
-        <!-- 3D PCB VIEWER — Actuator Board -->
-        <!-- 3D PCB VIEWER — Actuator Board -->
+    <!-- 3D PCB VIEWER — Actuator Board -->
     <div class="viewer">
       <div class="section-sub-title">// Interactive 3D PCB — Actuator Board</div>
       <div class="viewer-box">
@@ -700,13 +747,14 @@
         <a class="btn-outline" target="_blank" href="https://personal-viewer.365.altium.com/client/index.html?feature=embed&source=639CF68F-434B-4A57-AD92-EFE6E271D2AF&activeView=3D">Open Full Screen ↗</a>
       </div>
     </div>
+
     <div class="gallery">
-      <div class="g-cell"><img src="media/PCB3.jpeg" alt="Assembled Actuator PCB" onclick="openLightbox(this.src)"><div class="g-label">Close Up</div></div>
-      <div class="g-cell"><img src="media/PCB4.jpeg" alt="Bare PCB" onclick="openLightbox(this.src)"><div class="g-label">Backside</div></div>
+      <div class="g-cell"><img src="media/PCB3.jpeg" alt="Assembled Actuator PCB" onclick="openLightbox(this.src)"><div class="g-label">Assembled Board</div></div>
+      <div class="g-cell"><img src="media/PCB4.jpeg" alt="Bare PCB" onclick="openLightbox(this.src)"><div class="g-label">Actuator Board — Bare PCB</div></div>
       <div class="g-cell"><img src="media/PCB2.jpeg" alt="Interface board stacked" onclick="openLightbox(this.src)"><div class="g-label">Interface Board Stacked</div></div>
-      <div class="g-cell"><img src="media/PCB6.jpeg" alt="First power-on" onclick="openLightbox(this.src)"><div class="g-label">PCBs On the Bot</div></div>
-      <div class="g-cell"><img src="media/PCB1.jpeg" alt="Close-up" onclick="openLightbox(this.src)"><div class="g-label">Assembled PCB</div></div>
-      <div class="g-cell"><img src="media/PCB5.jpeg" alt="Back side" onclick="openLightbox(this.src)"><div class="g-label">First Power On</div></div>
+      <div class="g-cell"><img src="media/PCB6.jpeg" alt="First power-on" onclick="openLightbox(this.src)"><div class="g-label">First Power-On</div></div>
+      <div class="g-cell"><img src="media/PCB1.jpeg" alt="Close-up" onclick="openLightbox(this.src)"><div class="g-label">Close-Up</div></div>
+      <div class="g-cell"><img src="media/PCB5.jpeg" alt="Back side" onclick="openLightbox(this.src)"><div class="g-label">Back Side</div></div>
     </div>
 
     <div class="detail-cols">
@@ -749,17 +797,6 @@
     } else {
       img.onerror = null;
     }
-  }
-
-  /* Altium 365 viewer: loads only when the button is clicked */
-  function loadViewer(btn) {
-    const box = btn.closest('.viewer-box');
-    const frame = document.createElement('iframe');
-    frame.src = btn.dataset.src;
-    frame.allowFullscreen = true;
-    frame.title = 'Altium 365 PCB 3D Viewer';
-    box.innerHTML = '';
-    box.appendChild(frame);
   }
 
   /* Lightbox */
